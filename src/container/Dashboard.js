@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PushSettings from "container/PushSettings.js";
+import PrayerCreator from "container/PrayerCreator.js";
 
 class App extends Component {
     render() {
@@ -7,6 +8,7 @@ class App extends Component {
             <div>
                 Welcome to PrayForMe app!
                 <PushSettings />
+                <PrayerCreator />
             </div>
         );
     }
