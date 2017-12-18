@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PushSettings from "container/PushSettings.js";
 import PrayerCreator from "container/PrayerCreator.js";
+import NotificationDisplayer from "container/NotificationDisplayer.js";
 import { FormattedMessage } from "react-intl";
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
                 />
                 <PushSettings />
                 <PrayerCreator />
+                <NotificationDisplayer />
             </div>
         );
     }

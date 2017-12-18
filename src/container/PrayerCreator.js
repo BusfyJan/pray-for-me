@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import AddButton from "component/prayer/AddButton.js";
 import AddForm from "component/prayer/AddForm.js";
 import { add as addPrayer } from "module/prayer.js";
+import { connect } from "react-redux";
+import { notification as notificationActions } from "actions/index.js";
+import { FormattedMessage } from "react-intl";
 
 class PrayerCreator extends Component {
     constructor() {
@@ -16,6 +19,14 @@ class PrayerCreator extends Component {
         return new Promise((resolve, reject) => {
             addPrayer(prayerType);
             this.setState({ isOpen: false });
+            this.props.dispatch(
+                notificationActions.add(
+                    <FormattedMessage
+                        id="container.prayerCreator.prayerAdded"
+                        defaultMessage="Prayer request was successfully created"
+                    />
+                )
+            );
             resolve();
         });
     }
@@ -41,5 +52,9 @@ class PrayerCreator extends Component {
         );
     }
 }
+
+PrayerCreator = connect(state => {
+    return {};
+})(PrayerCreator);
 
 export default PrayerCreator;
