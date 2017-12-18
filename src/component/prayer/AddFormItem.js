@@ -37,7 +37,7 @@ class AddFormItem extends Component {
             >
                 <ListItemIcon>
                     {this.state.isLoading ? (
-                        <CircularProgress size={25} />
+                        <CircularProgress size={24} thickness={7} />
                     ) : (
                         this.props.icon
                     )}

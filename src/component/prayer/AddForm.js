@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Item from "component/prayer/AddFormItem.js";
 import Drawer from "material-ui/Drawer";
 import Divider from "material-ui/Divider";
-import ListSubheader from "material-ui/List/ListSubheader";
 import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List";
 import HealthIcon from "material-ui-icons/Accessibility";
 import MoneyIcon from "material-ui-icons/AttachMoney";
@@ -82,11 +81,7 @@ class AddForm extends Component {
                     this.props.onCancel();
                 }}
             >
-                <List
-                    subheader={
-                        <ListSubheader>Add new prayer request</ListSubheader>
-                    }
-                >
+                <List>
                     {prayers.map(prayer => {
                         return (
                             <Item

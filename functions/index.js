@@ -7,8 +7,8 @@ admin.initializeApp(functions.config().firebase);
 
 // Listens for new messages added to /messages/:pushId/original and creates an
 // uppercase version of the message to /messages/:pushId/uppercase
-exports.newMessageAdded = functions.database
-    .ref("/messages/{messageId}")
+exports.newPrayerAdded = functions.database
+    .ref("/prayers/{userId}/{prayerId}")
     .onCreate(event => {
         return admin
             .database()
@@ -17,11 +17,16 @@ exports.newMessageAdded = functions.database
             .then(snapshot => {
                 const tokens = snapshot.val();
                 for (var i in tokens) {
+                    if (i === event.params.userId) {
+                        continue;
+                    }
+
                     admin
                         .messaging()
                         .sendToDevice(tokens[i], {
                             data: {
-                                message: "hello world"
+                                title: "New prayer request added",
+                                message: "Somebody needs your prayer"
                             }
                         })
                         .then(function(response) {

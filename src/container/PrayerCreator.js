@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AddButton from "component/prayer/AddButton.js";
 import AddForm from "component/prayer/AddForm.js";
+import { add as addPrayer } from "module/prayer.js";
 
 class PrayerCreator extends Component {
     constructor() {
@@ -9,6 +10,14 @@ class PrayerCreator extends Component {
         this.state = {
             isOpen: false
         };
+    }
+
+    onAddFormSubmit(prayerType) {
+        return new Promise((resolve, reject) => {
+            addPrayer(prayerType);
+            this.setState({ isOpen: false });
+            resolve();
+        });
     }
 
     render() {
@@ -22,12 +31,7 @@ class PrayerCreator extends Component {
                 <AddForm
                     isOpen={this.state.isOpen}
                     onSubmit={prayerType => {
-                        return new Promise((resolve, reject) => {
-                            setTimeout(() => {
-                                this.setState({ isOpen: false });
-                                resolve();
-                            }, 1000);
-                        });
+                        return this.onAddFormSubmit(prayerType);
                     }}
                     onCancel={() => {
                         this.setState({ isOpen: false });

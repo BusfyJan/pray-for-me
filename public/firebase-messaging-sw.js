@@ -10,8 +10,8 @@ firebase.initializeApp({
 });
 
 firebase.messaging().setBackgroundMessageHandler(function(payload) {
-    return self.registration.showNotification("Hello world", {
-        body: payload.data.status,
+    return self.registration.showNotification(payload.data.title, {
+        body: payload.data.message,
         requireInteraction: true
     });
 });
