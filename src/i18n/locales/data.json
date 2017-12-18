@@ -13,5 +13,6 @@
   "component.prayer.info.notificationsEnabled": "Notifications are enabled",
   "component.prayer.info.title": "Notifications info",
   "container.dashboard.welcome": "Welcome to PrayForMe app!",
-  "container.prayerCreator.prayerAdded": "Prayer request was successfully created"
+  "container.prayerCreator.prayerAdded": "Prayer request was successfully created",
+  "container.prayerList.failedToRetrievePrayers": "Failed to retrieve prayers"
 } }
