@@ -21,9 +21,13 @@ class PrayerCreator extends Component {
                 />
                 <AddForm
                     isOpen={this.state.isOpen}
-                    onSubmit={prayer => {
-                        console.log(prayer);
-                        this.setState({ isOpen: false });
+                    onSubmit={prayerType => {
+                        return new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                this.setState({ isOpen: false });
+                                resolve();
+                            }, 1000);
+                        });
                     }}
                     onCancel={() => {
                         this.setState({ isOpen: false });
