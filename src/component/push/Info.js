@@ -43,7 +43,7 @@ class Info extends Component {
         return (
             <Dialog
                 open={this.props.isVisible}
-                onRequestClose={() => {
+                onClose={() => {
                     this.props.onRequestClose();
                 }}
             >

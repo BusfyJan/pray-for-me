@@ -8,7 +8,7 @@ import IconLoading from "material-ui-icons/Cached";
 
 const MaterialButtonStyled = styled(MaterialButton)`
     position: fixed !important;
-    right: 10px;
+    left: 10px;
     bottom: 10px;
 `;
 
