@@ -1,0 +1,22 @@
+[
+  {
+    "id": "component.prayer.info.notificationsManuallyDisabled",
+    "defaultMessage": "Notifications are manually disabled. You can enable them in browser setting"
+  },
+  {
+    "id": "component.prayer.info.notificationsDisabled",
+    "defaultMessage": "Notifications are disabled. You can enable them by clicking the button"
+  },
+  {
+    "id": "component.prayer.info.enableNotifications",
+    "defaultMessage": "Enable notifications"
+  },
+  {
+    "id": "component.prayer.info.notificationsEnabled",
+    "defaultMessage": "Notifications are enabled"
+  },
+  {
+    "id": "component.prayer.info.title",
+    "defaultMessage": "Notifications info"
+  }
+]

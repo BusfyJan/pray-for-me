@@ -1,0 +1,34 @@
+[
+  {
+    "id": "component.prayer.addForm.prayerGuidance",
+    "defaultMessage": "Guidance"
+  },
+  {
+    "id": "component.prayer.addForm.prayerHealth",
+    "defaultMessage": "Health"
+  },
+  {
+    "id": "component.prayer.addForm.prayerJoy",
+    "defaultMessage": "Joy"
+  },
+  {
+    "id": "component.prayer.addForm.prayerMoney",
+    "defaultMessage": "Money"
+  },
+  {
+    "id": "component.prayer.addForm.prayerPeace",
+    "defaultMessage": "Peace"
+  },
+  {
+    "id": "component.prayer.addForm.prayerRelationships",
+    "defaultMessage": "Relationships"
+  },
+  {
+    "id": "component.prayer.addForm.prayerTime",
+    "defaultMessage": "Time"
+  },
+  {
+    "id": "component.prayer.addForm.cancel",
+    "defaultMessage": "cancel"
+  }
+]

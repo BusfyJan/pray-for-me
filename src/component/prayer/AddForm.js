@@ -11,41 +11,77 @@ import GuidanceIcon from "material-ui-icons/Gesture";
 import JoyIcon from "material-ui-icons/InsertEmoticon";
 import PeaceIcon from "material-ui-icons/FilterVintage";
 import CancelIcon from "material-ui-icons/Cancel";
+import { FormattedMessage } from "react-intl";
 
 const prayers = [
     {
         type: "guidance",
-        label: "Guidance",
+        label: (
+            <FormattedMessage
+                id="component.prayer.addForm.prayerGuidance"
+                defaultMessage="Guidance"
+            />
+        ),
         icon: <GuidanceIcon />
     },
     {
         type: "school",
-        label: "Health",
+        label: (
+            <FormattedMessage
+                id="component.prayer.addForm.prayerHealth"
+                defaultMessage="Health"
+            />
+        ),
         icon: <HealthIcon />
     },
     {
         type: "joy",
-        label: "Joy",
+        label: (
+            <FormattedMessage
+                id="component.prayer.addForm.prayerJoy"
+                defaultMessage="Joy"
+            />
+        ),
         icon: <JoyIcon />
     },
     {
         type: "money",
-        label: "Money",
+        label: (
+            <FormattedMessage
+                id="component.prayer.addForm.prayerMoney"
+                defaultMessage="Money"
+            />
+        ),
         icon: <MoneyIcon />
     },
     {
         type: "peace",
-        label: "Peace",
+        label: (
+            <FormattedMessage
+                id="component.prayer.addForm.prayerPeace"
+                defaultMessage="Peace"
+            />
+        ),
         icon: <PeaceIcon />
     },
     {
         type: "relationships",
-        label: "Relationships",
+        label: (
+            <FormattedMessage
+                id="component.prayer.addForm.prayerRelationships"
+                defaultMessage="Relationships"
+            />
+        ),
         icon: <RelationshipsIcon />
     },
     {
         type: "time",
-        label: "Time",
+        label: (
+            <FormattedMessage
+                id="component.prayer.addForm.prayerTime"
+                defaultMessage="Time"
+            />
+        ),
         icon: <TimeIcon />
     }
 ];
@@ -105,7 +141,14 @@ class AddForm extends Component {
                         <ListItemIcon>
                             <CancelIcon />
                         </ListItemIcon>
-                        <ListItemText secondary="cancel" />
+                        <ListItemText
+                            secondary={
+                                <FormattedMessage
+                                    id="component.prayer.addForm.cancel"
+                                    defaultMessage="cancel"
+                                />
+                            }
+                        />
                     </ListItem>
                 </List>
             </Drawer>
