@@ -1,21 +1,16 @@
-{
-    "en": {
-        "component.prayer.addForm.prayerGuidance": "Guidance",
-        "component.prayer.addForm.prayerHealth": "Health",
-        "component.prayer.addForm.prayerJoy": "Joy",
-        "component.prayer.addForm.prayerMoney": "Money",
-        "component.prayer.addForm.prayerPeace": "Peace",
-        "component.prayer.addForm.prayerRelationships": "Relationships",
-        "component.prayer.addForm.prayerTime": "Time",
-        "component.prayer.addForm.cancel": "cancel",
-        "component.prayer.info.notificationsManuallyDisabled":
-            "Notifications are manually disabled. You can enable them in browser setting",
-        "component.prayer.info.notificationsDisabled":
-            "Notifications are disabled. You can enable them by clicking the button",
-        "component.prayer.info.enableNotifications": "Enable notifications",
-        "component.prayer.info.notificationsEnabled":
-            "Notifications are enabled",
-        "component.prayer.info.title": "Notifications info",
-        "container.dashboard.welcome": "Welcome to PrayForMe app!"
-    }
-}
+{ "en": {
+  "component.prayer.addForm.prayerGuidance": "Guidance",
+  "component.prayer.addForm.prayerHealth": "Health",
+  "component.prayer.addForm.prayerJoy": "Joy",
+  "component.prayer.addForm.prayerMoney": "Money",
+  "component.prayer.addForm.prayerPeace": "Peace",
+  "component.prayer.addForm.prayerRelationships": "Relationships",
+  "component.prayer.addForm.prayerTime": "Time",
+  "component.prayer.addForm.cancel": "cancel",
+  "component.prayer.info.notificationsManuallyDisabled": "Notifications are manually disabled. You can enable them in browser setting",
+  "component.prayer.info.notificationsDisabled": "Notifications are disabled. You can enable them by clicking the button",
+  "component.prayer.info.enableNotifications": "Enable notifications",
+  "component.prayer.info.notificationsEnabled": "Notifications are enabled",
+  "component.prayer.info.title": "Notifications info",
+  "container.dashboard.welcome": "Welcome to PrayForMe app!"
+} }
