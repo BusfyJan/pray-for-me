@@ -4,8 +4,11 @@ import { getId as getUserId } from "module/user.js";
 export const add = prayerType => {
     return firebase
         .database()
-        .ref("prayers/" + getUserId())
-        .push(prayerType).key;
+        .ref("prayers")
+        .push({
+            type: prayerType,
+            userId: getUserId()
+        }).key;
 };
 
 export const getAll = () => {
@@ -14,31 +17,9 @@ export const getAll = () => {
         .ref("prayers")
         .once("value")
         .then(rows => {
-            const allPrayers = [];
-            rows = rows.val();
-
-            if (!rows) {
-                return allPrayers;
-            }
-
-            Object.entries(rows)
-                .map(([userId, prayersData]) => {
-                    return Object.entries(prayersData).map(
-                        ([prayerId, prayerType]) => {
-                            return {
-                                id: prayerId,
-                                userId,
-                                type: prayerType
-                            };
-                        }
-                    );
-                })
-                .forEach(userPrayers => {
-                    userPrayers.forEach(userPrayer => {
-                        allPrayers.push(userPrayer);
-                    });
-                });
-
-            return allPrayers;
+            return Object.entries(rows.val()).map(([prayerId, prayerData]) => {
+                prayerData.id = prayerId;
+                return prayerData;
+            });
         });
 };

@@ -16,6 +16,7 @@ class PrayerList extends Component {
     componentWillMount() {
         getAllPrayers()
             .then(prayers => {
+                console.log(prayers);
                 this.setState({ prayers });
             })
             .catch(() => {
