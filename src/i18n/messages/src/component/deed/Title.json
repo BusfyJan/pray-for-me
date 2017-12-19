@@ -1,0 +1,10 @@
+[
+  {
+    "id": "component.deed.title.guidance",
+    "defaultMessage": "Prayer"
+  },
+  {
+    "id": "component.deed.title.health",
+    "defaultMessage": "Mass"
+  }
+]

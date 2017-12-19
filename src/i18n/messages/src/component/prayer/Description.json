@@ -1,0 +1,30 @@
+[
+  {
+    "id": "component.prayer.description.guidance",
+    "defaultMessage": "Need for guidance and path"
+  },
+  {
+    "id": "component.prayer.description.health",
+    "defaultMessage": "Need to be healed physically"
+  },
+  {
+    "id": "component.prayer.description.joy",
+    "defaultMessage": "Need for joy"
+  },
+  {
+    "id": "component.prayer.description.money",
+    "defaultMessage": "Need for money"
+  },
+  {
+    "id": "component.prayer.description.peace",
+    "defaultMessage": "Need to feel true peace"
+  },
+  {
+    "id": "component.prayer.description.relationships",
+    "defaultMessage": "Need help in relationships"
+  },
+  {
+    "id": "component.prayer.description.time",
+    "defaultMessage": "Need more time"
+  }
+]

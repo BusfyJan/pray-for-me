@@ -1,0 +1,30 @@
+[
+  {
+    "id": "component.prayer.title.guidance",
+    "defaultMessage": "Guidance"
+  },
+  {
+    "id": "component.prayer.title.health",
+    "defaultMessage": "Health"
+  },
+  {
+    "id": "component.prayer.title.joy",
+    "defaultMessage": "Joy"
+  },
+  {
+    "id": "component.prayer.title.money",
+    "defaultMessage": "Money"
+  },
+  {
+    "id": "component.prayer.title.peace",
+    "defaultMessage": "Peace"
+  },
+  {
+    "id": "component.prayer.title.relationships",
+    "defaultMessage": "Relationships"
+  },
+  {
+    "id": "component.prayer.title.time",
+    "defaultMessage": "Time"
+  }
+]

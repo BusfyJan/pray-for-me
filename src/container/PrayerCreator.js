@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import AddButton from "component/prayer/AddButton.js";
-import AddForm from "component/prayer/AddForm.js";
+import RequestButton from "component/prayer/add/Button.js";
+import RequestForm from "component/prayer/add/Form.js";
 import { add as addPrayer } from "module/prayer.js";
 import { connect } from "react-redux";
 import { notification as notificationActions } from "actions/index.js";
@@ -11,14 +11,14 @@ class PrayerCreator extends Component {
         super();
 
         this.state = {
-            isOpen: false
+            isRequestFormOpen: false
         };
     }
 
     onAddFormSubmit(prayerType) {
         return new Promise((resolve, reject) => {
             addPrayer(prayerType);
-            this.setState({ isOpen: false });
+            this.setState({ isRequestFormOpen: false });
             this.props.dispatch(
                 notificationActions.add(
                     <FormattedMessage
@@ -34,18 +34,18 @@ class PrayerCreator extends Component {
     render() {
         return (
             <div>
-                <AddButton
+                <RequestButton
                     onClick={() => {
-                        this.setState({ isOpen: true });
+                        this.setState({ isRequestFormOpen: true });
                     }}
                 />
-                <AddForm
-                    isOpen={this.state.isOpen}
+                <RequestForm
+                    isOpen={this.state.isRequestFormOpen}
                     onSubmit={prayerType => {
                         return this.onAddFormSubmit(prayerType);
                     }}
                     onCancel={() => {
-                        this.setState({ isOpen: false });
+                        this.setState({ isRequestFormOpen: false });
                     }}
                 />
             </div>

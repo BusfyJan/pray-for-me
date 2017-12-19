@@ -7,9 +7,10 @@ const MaterialButtonStyled = styled(MaterialButton)`
     position: fixed !important;
     right: 10px;
     bottom: 10px;
+    z-index: 1;
 `;
 
-class AddButton extends Component {
+class Button extends Component {
     render() {
         return (
             <MaterialButtonStyled
@@ -17,6 +18,7 @@ class AddButton extends Component {
                     this.props.onClick();
                 }}
                 fab
+                mini
                 color="primary"
             >
                 <IconAdd />
@@ -25,4 +27,4 @@ class AddButton extends Component {
     }
 }
 
-export default AddButton;
+export default Button;

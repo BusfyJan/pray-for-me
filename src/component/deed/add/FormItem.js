@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { ListItem, ListItemIcon, ListItemText } from "material-ui/List";
 import { CircularProgress } from "material-ui/Progress";
+import DeedIcon from "component/deed/Icon.js";
+import DeedTitle from "component/deed/Title.js";
 
-class AddFormItem extends Component {
+class FormItem extends Component {
     constructor() {
         super();
 
@@ -39,13 +41,13 @@ class AddFormItem extends Component {
                     {this.state.isLoading ? (
                         <CircularProgress size={24} thickness={7} />
                     ) : (
-                        this.props.icon
+                        <DeedIcon type={this.props.type} />
                     )}
                 </ListItemIcon>
-                <ListItemText primary={this.props.label} />
+                <ListItemText primary={<DeedTitle type={this.props.type} />} />
             </ListItem>
         );
     }
 }
 
-export default AddFormItem;
+export default FormItem;

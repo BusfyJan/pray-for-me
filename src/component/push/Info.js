@@ -17,7 +17,7 @@ class Info extends Component {
         if (!this.props.isPushEnabled && !this.props.canPushBeEnabled) {
             return (
                 <FormattedMessage
-                    id="component.prayer.info.notificationsManuallyDisabled"
+                    id="component.push.info.notificationsManuallyDisabled"
                     defaultMessage={`Notifications are manually disabled. You can enable them in browser setting`}
                 />
             );
@@ -27,7 +27,7 @@ class Info extends Component {
             return (
                 <span>
                     <FormattedMessage
-                        id="component.prayer.info.notificationsDisabled"
+                        id="component.push.info.notificationsDisabled"
                         defaultMessage={`Notifications are disabled. You can enable them by clicking the button`}
                     />
                     <br />
@@ -40,7 +40,7 @@ class Info extends Component {
                         }}
                     >
                         <FormattedMessage
-                            id="component.prayer.info.enableNotifications"
+                            id="component.push.info.enableNotifications"
                             defaultMessage={`Enable notifications`}
                         />
                     </ButtonStyled>
@@ -50,7 +50,7 @@ class Info extends Component {
 
         return (
             <FormattedMessage
-                id="component.prayer.info.notificationsEnabled"
+                id="component.push.info.notificationsEnabled"
                 defaultMessage={`Notifications are enabled`}
             />
         );
@@ -66,7 +66,7 @@ class Info extends Component {
             >
                 <DialogTitle>
                     <FormattedMessage
-                        id="component.prayer.info.title"
+                        id="component.push.info.title"
                         defaultMessage={`Notifications info`}
                     />
                 </DialogTitle>

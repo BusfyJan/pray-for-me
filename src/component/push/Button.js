@@ -8,8 +8,9 @@ import IconLoading from "material-ui-icons/Cached";
 
 const MaterialButtonStyled = styled(MaterialButton)`
     position: fixed !important;
-    left: 10px;
+    right: 55px;
     bottom: 10px;
+    z-index: 1;
 `;
 
 class Button extends Component {
@@ -36,6 +37,7 @@ class Button extends Component {
                     this.props.onClick();
                 }}
                 fab
+                mini
                 color="primary"
             >
                 {this.getButtonIcon()}

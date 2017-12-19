@@ -17,7 +17,13 @@ export const getAll = () => {
         .ref("prayers")
         .once("value")
         .then(rows => {
-            return Object.entries(rows.val()).map(([prayerId, prayerData]) => {
+            rows = rows.val();
+
+            if (!rows) {
+                return [];
+            }
+
+            return Object.entries(rows).map(([prayerId, prayerData]) => {
                 prayerData.id = prayerId;
                 return prayerData;
             });

@@ -1,5 +1,9 @@
 [
   {
+    "id": "container.prayerList.deedAdded",
+    "defaultMessage": "Deed was successfully added to prayer"
+  },
+  {
     "id": "container.prayerList.failedToRetrievePrayers",
     "defaultMessage": "Failed to retrieve prayers"
   }
