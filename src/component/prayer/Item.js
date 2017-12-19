@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Card, { CardHeader, CardActions } from "material-ui/Card";
+import Card, { CardHeader, CardContent, CardActions } from "material-ui/Card";
 import IconButton from "material-ui/IconButton";
 import AddIcon from "material-ui-icons/Add";
 import Divider from "material-ui/Divider";
 import PrayerIcon from "component/prayer/Icon.js";
 import PrayerTitle from "component/prayer/Title.js";
 import PrayerDescription from "component/prayer/Description.js";
+import DeedsList from "component/deed/List.js";
 
 const CardStyled = styled(Card)`
     margin-bottom: 25px;
@@ -28,6 +29,10 @@ class Item extends Component {
                         <PrayerDescription type={this.props.data.type} />
                     }
                 />
+                <Divider />
+                <CardContent>
+                    <DeedsList items={this.props.data.deeds} />
+                </CardContent>
                 <Divider />
                 <CardActions disableActionSpacing>
                     <ActionsWrapper>

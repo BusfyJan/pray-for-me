@@ -25,6 +25,18 @@ export const getAll = () => {
 
             return Object.entries(rows).map(([prayerId, prayerData]) => {
                 prayerData.id = prayerId;
+
+                if (!prayerData.deeds) {
+                    prayerData.deeds = [];
+                } else {
+                    prayerData.deeds = Object.entries(prayerData.deeds).map(
+                        ([deedId, deedData]) => {
+                            deedData.id = deedId;
+                            return deedData;
+                        }
+                    );
+                }
+
                 return prayerData;
             });
         });
