@@ -5,6 +5,8 @@ import Divider from "material-ui/Divider";
 import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List";
 import { FormattedMessage } from "react-intl";
 import CancelIcon from "material-ui-icons/Cancel";
+import styled from "styled-components";
+import { red } from "material-ui/colors";
 
 const prayerTypes = [
     "guidance",
@@ -15,6 +17,13 @@ const prayerTypes = [
     "relationships",
     "time"
 ];
+
+const CancelIconStyled = styled(CancelIcon)`
+    && {
+        color: ${red[500]};
+        margin-right: 0px;
+    }
+`;
 
 class Form extends Component {
     constructor() {
@@ -48,6 +57,17 @@ class Form extends Component {
                 }}
             >
                 <List>
+                    <ListItem>
+                        <ListItemText
+                            primary={
+                                <FormattedMessage
+                                    id="component.prayer.add.form.title"
+                                    defaultMessage="What do you need others to pray about?"
+                                />
+                            }
+                        />
+                    </ListItem>
+                    <Divider />
                     {prayerTypes.map(prayerType => {
                         return (
                             <Item
@@ -68,10 +88,10 @@ class Form extends Component {
                         }}
                     >
                         <ListItemIcon>
-                            <CancelIcon />
+                            <CancelIconStyled />
                         </ListItemIcon>
                         <ListItemText
-                            secondary={
+                            primary={
                                 <FormattedMessage
                                     id="component.prayer.add.form.cancel"
                                     defaultMessage="cancel"

@@ -18,7 +18,6 @@ class Button extends Component {
                     this.props.onClick();
                 }}
                 fab
-                mini
                 color="primary"
             >
                 <IconAdd />

@@ -5,8 +5,17 @@ import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List";
 import { FormattedMessage } from "react-intl";
 import CancelIcon from "material-ui-icons/Cancel";
 import Item from "component/deed/add/FormItem";
+import styled from "styled-components";
+import { red } from "material-ui/colors";
 
 const deedTypes = ["prayer", "mass"];
+
+const CancelIconStyled = styled(CancelIcon)`
+    && {
+        color: ${red[500]};
+        margin-right: 0px;
+    }
+`;
 
 class Form extends Component {
     constructor() {
@@ -40,6 +49,17 @@ class Form extends Component {
                 }}
             >
                 <List>
+                    <ListItem>
+                        <ListItemText
+                            primary={
+                                <FormattedMessage
+                                    id="component.deed.add.form.title"
+                                    defaultMessage="What deed do have you done for this request?"
+                                />
+                            }
+                        />
+                    </ListItem>
+                    <Divider />
                     {deedTypes.map(deedType => {
                         return (
                             <Item
@@ -60,10 +80,10 @@ class Form extends Component {
                         }}
                     >
                         <ListItemIcon>
-                            <CancelIcon />
+                            <CancelIconStyled />
                         </ListItemIcon>
                         <ListItemText
-                            secondary={
+                            primary={
                                 <FormattedMessage
                                     id="component.deed.add.form.cancel"
                                     defaultMessage="cancel"

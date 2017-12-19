@@ -1,7 +1,10 @@
 { "en": {
+  "component.deed.add.form.title": "What deed do have you done for this request?",
   "component.deed.add.form.cancel": "cancel",
+  "component.deed.list.deedsTitle": "Deeds for this prayer",
   "component.deed.title.guidance": "Prayer",
   "component.deed.title.health": "Mass",
+  "component.prayer.add.form.title": "What do you need others to pray about?",
   "component.prayer.add.form.cancel": "cancel",
   "component.prayer.description.guidance": "Need for guidance and path",
   "component.prayer.description.health": "Need to be healed physically",

@@ -1,5 +1,9 @@
 [
   {
+    "id": "component.prayer.add.form.title",
+    "defaultMessage": "What do you need others to pray about?"
+  },
+  {
     "id": "component.prayer.add.form.cancel",
     "defaultMessage": "cancel"
   }
