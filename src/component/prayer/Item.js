@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Card, { CardHeader, CardContent, CardActions } from "material-ui/Card";
-import IconButton from "material-ui/IconButton";
+import { FormattedMessage } from "react-intl";
+import Button from "material-ui/Button";
 import AddIcon from "material-ui-icons/Add";
 import Divider from "material-ui/Divider";
 import PrayerIcon from "component/prayer/Icon.js";
@@ -16,6 +17,7 @@ const CardStyled = styled(Card)`
 const ActionsWrapper = styled.div`
     width: 100%;
     text-align: right;
+    margin-right: 5px;
 `;
 
 class Item extends Component {
@@ -36,13 +38,20 @@ class Item extends Component {
                 <Divider />
                 <CardActions disableActionSpacing>
                     <ActionsWrapper>
-                        <IconButton
+                        <Button
                             onClick={() => {
                                 this.props.onResponseRequest();
                             }}
+                            raised
+                            color="primary"
                         >
+                            <FormattedMessage
+                                id="component.prayer.item.addDeedButton"
+                                defaultMessage="Add deed"
+                            />
+                            &nbsp;
                             <AddIcon />
-                        </IconButton>
+                        </Button>
                     </ActionsWrapper>
                 </CardActions>
             </CardStyled>

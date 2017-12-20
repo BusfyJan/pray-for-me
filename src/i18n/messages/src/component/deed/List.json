@@ -1,10 +1,6 @@
 [
   {
-    "id": "component.deed.list.deedsTitle",
-    "defaultMessage": "Deeds for this prayer"
-  },
-  {
     "id": "component.deed.list.deedsTitleEmpty",
-    "defaultMessage": "No deeds for this prayer yet"
+    "defaultMessage": "No deeds for this prayer were added yet"
   }
 ]

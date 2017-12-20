@@ -1,8 +1,7 @@
 { "en": {
   "component.deed.add.form.title": "What deed have you done for this request?",
   "component.deed.add.form.cancel": "cancel",
-  "component.deed.list.deedsTitle": "Deeds for this prayer",
-  "component.deed.list.deedsTitleEmpty": "No deeds for this prayer yet",
+  "component.deed.list.deedsTitleEmpty": "No deeds for this prayer were added yet",
   "component.deed.title.guidance": "Prayer",
   "component.deed.title.health": "Mass",
   "component.prayer.add.form.title": "What do you need others to pray about?",
@@ -14,6 +13,7 @@
   "component.prayer.description.peace": "Need to feel true peace",
   "component.prayer.description.relationships": "Need help in relationships",
   "component.prayer.description.time": "Need more time",
+  "component.prayer.item.addDeedButton": "Add deed",
   "component.prayer.title.guidance": "Guidance",
   "component.prayer.title.health": "Health",
   "component.prayer.title.joy": "Joy",

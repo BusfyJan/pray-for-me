@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Item from "component/deed/Item.js";
-import MaterialList from "material-ui/List";
+import MaterialList, { ListItem as MaterialListItem } from "material-ui/List";
 import ListSubheader from "material-ui/List/ListSubheader";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
@@ -9,6 +9,14 @@ const MaterialListStyled = styled(MaterialList)`
     && {
         padding: 0px;
     }
+`;
+
+const ItemWrapper = styled.span`
+    padding-right: 10px;
+`;
+
+const NoItemsTextWrapper = styled.div`
+    margin-bottom: 4px;
 `;
 
 class List extends Component {
@@ -31,31 +39,33 @@ class List extends Component {
             <MaterialListStyled
                 subheader={
                     <ListSubheader>
-                        {this.props.items.length > 0 ? (
-                            <FormattedMessage
-                                id="component.deed.list.deedsTitle"
-                                defaultMessage="Deeds for this prayer"
-                            />
-                        ) : (
-                            <FormattedMessage
-                                id="component.deed.list.deedsTitleEmpty"
-                                defaultMessage="No deeds for this prayer yet"
-                            />
-                        )}
+                        {this.props.items.length === 0 ? (
+                            <NoItemsTextWrapper>
+                                <FormattedMessage
+                                    id="component.deed.list.deedsTitleEmpty"
+                                    defaultMessage="No deeds for this prayer were added yet"
+                                />
+                            </NoItemsTextWrapper>
+                        ) : null}
                     </ListSubheader>
                 }
             >
-                {Object.entries(this.groupItemsByDeedType()).map(
-                    ([deedType, deeds], index) => {
-                        return (
-                            <Item
-                                key={deedType}
-                                type={deedType}
-                                count={deeds.length}
-                            />
-                        );
-                    }
-                )}
+                {this.props.items.length > 0 ? (
+                    <MaterialListItem>
+                        {Object.entries(this.groupItemsByDeedType()).map(
+                            ([deedType, deeds], index) => {
+                                return (
+                                    <ItemWrapper key={deedType}>
+                                        <Item
+                                            type={deedType}
+                                            count={deeds.length}
+                                        />
+                                    </ItemWrapper>
+                                );
+                            }
+                        )}
+                    </MaterialListItem>
+                ) : null}
             </MaterialListStyled>
         );
     }

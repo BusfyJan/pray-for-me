@@ -10,7 +10,7 @@ const MaterialButtonStyled = styled(MaterialButton)`
     position: fixed !important;
     right: 75px;
     bottom: 18px;
-    z-index: 1;
+    z-index: 2;
 `;
 
 class Button extends Component {
