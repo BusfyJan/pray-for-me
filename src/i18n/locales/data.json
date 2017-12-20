@@ -1,7 +1,8 @@
 { "en": {
-  "component.deed.add.form.title": "What deed do have you done for this request?",
+  "component.deed.add.form.title": "What deed have you done for this request?",
   "component.deed.add.form.cancel": "cancel",
   "component.deed.list.deedsTitle": "Deeds for this prayer",
+  "component.deed.list.deedsTitleEmpty": "No deeds for this prayer yet",
   "component.deed.title.guidance": "Prayer",
   "component.deed.title.health": "Mass",
   "component.prayer.add.form.title": "What do you need others to pray about?",

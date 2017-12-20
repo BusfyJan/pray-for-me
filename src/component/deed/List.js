@@ -31,10 +31,17 @@ class List extends Component {
             <MaterialListStyled
                 subheader={
                     <ListSubheader>
-                        <FormattedMessage
-                            id="component.deed.list.deedsTitle"
-                            defaultMessage="Deeds for this prayer"
-                        />
+                        {this.props.items.length > 0 ? (
+                            <FormattedMessage
+                                id="component.deed.list.deedsTitle"
+                                defaultMessage="Deeds for this prayer"
+                            />
+                        ) : (
+                            <FormattedMessage
+                                id="component.deed.list.deedsTitleEmpty"
+                                defaultMessage="No deeds for this prayer yet"
+                            />
+                        )}
                     </ListSubheader>
                 }
             >

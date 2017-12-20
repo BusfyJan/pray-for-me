@@ -8,8 +8,10 @@ admin.initializeApp(functions.config().firebase);
 // Listens for new messages added to /messages/:pushId/original and creates an
 // uppercase version of the message to /messages/:pushId/uppercase
 exports.newPrayerAdded = functions.database
-    .ref("/prayers/{userId}/{prayerId}")
+    .ref("/prayers/{prayerId}")
     .onCreate(event => {
+        const prayerData = event.data.val();
+        const userId = prayerData.userId;
         return admin
             .database()
             .ref("tokens")
@@ -17,26 +19,47 @@ exports.newPrayerAdded = functions.database
             .then(snapshot => {
                 const tokens = snapshot.val();
                 for (var i in tokens) {
-                    if (i === event.params.userId) {
+                    if (i === userId) {
                         continue;
                     }
 
-                    admin
-                        .messaging()
-                        .sendToDevice(tokens[i], {
-                            data: {
-                                title: "New prayer request added",
-                                message: "Somebody needs your prayer"
-                            }
-                        })
-                        .then(function(response) {
-                            // See the MessagingDevicesResponse reference documentation for
-                            // the contents of response.
-                            console.log("Successfully sent message:", response);
-                        })
-                        .catch(function(error) {
-                            console.log("Error sending message:", error);
-                        });
+                    admin.messaging().sendToDevice(tokens[i], {
+                        data: {
+                            title: "New prayer request added",
+                            message: "Somebody needs your prayer"
+                        }
+                    });
                 }
+            });
+    });
+
+exports.newDeedAdded = functions.database
+    .ref("/prayers/{prayerId}/deeds/{deedId}")
+    .onCreate(event => {
+        return admin
+            .database()
+            .ref("prayers/" + event.params.prayerId)
+            .once("value")
+            .then(snapshot => {
+                const prayerData = snapshot.val();
+                return prayerData.userId;
+            })
+            .then(userId => {
+                return admin
+                    .database()
+                    .ref("tokens/" + userId)
+                    .once("value")
+                    .then(snapshot => {
+                        return snapshot.val();
+                    })
+                    .then(token => {
+                        return admin.messaging().sendToDevice(token, {
+                            data: {
+                                title: "New deed to your prayer request added",
+                                message:
+                                    "Somebody has added deed to your prayer request"
+                            }
+                        });
+                    });
             });
     });

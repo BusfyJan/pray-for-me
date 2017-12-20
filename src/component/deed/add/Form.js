@@ -54,7 +54,7 @@ class Form extends Component {
                             primary={
                                 <FormattedMessage
                                     id="component.deed.add.form.title"
-                                    defaultMessage="What deed do have you done for this request?"
+                                    defaultMessage="What deed have you done for this request?"
                                 />
                             }
                         />
