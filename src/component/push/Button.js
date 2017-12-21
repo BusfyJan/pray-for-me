@@ -19,7 +19,7 @@ const animationKeyframe = keyframes`
 `;
 
 const IconLoadingRotating = styled(IconLoading)`
-    animation: ${animationKeyframe} 0.75s 0s both;
+    animation: ${animationKeyframe} 1s linear infinite;
 `;
 
 class Button extends Component {

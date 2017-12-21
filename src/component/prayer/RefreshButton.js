@@ -24,7 +24,7 @@ const animationKeyframe = keyframes`
 `;
 
 const IconRefreshRotating = styled(IconRefresh)`
-    animation: ${animationKeyframe} 0.75s 0s both;
+    animation: ${animationKeyframe} 1s linear infinite;
 `;
 
 class RefreshButton extends Component {
