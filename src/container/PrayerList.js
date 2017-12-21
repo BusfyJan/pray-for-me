@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { getId as getUserId } from "module/user.js";
-import {
-    getAll as getAllPrayers,
-    close as closePrayer
-} from "module/prayer.js";
+import { close as closePrayer } from "module/prayer.js";
 import { add as addDeed } from "module/deed.js";
 import { connect } from "react-redux";
-import { notification as notificationActions } from "actions/index.js";
+import {
+    notification as notificationActions,
+    prayer as prayerActions
+} from "actions/index.js";
 import { FormattedMessage } from "react-intl";
 import List from "component/prayer/List.js";
 import ResponseForm from "component/deed/add/Form.js";
@@ -16,9 +16,12 @@ class PrayerList extends Component {
         super();
 
         this.state = {
-            prayers: [],
             prayerIdToResponseTo: null
         };
+    }
+
+    componentWillMount() {
+        this.props.dispatch(prayerActions.addRefreshRequest());
     }
 
     onAddFormSubmit(deedType) {
@@ -33,6 +36,7 @@ class PrayerList extends Component {
                         />
                     )
                 );
+                this.props.dispatch(prayerActions.addRefreshRequest());
             })
             .catch(() => {
                 this.setState({ prayerIdToResponseTo: null });
@@ -58,6 +62,7 @@ class PrayerList extends Component {
                         />
                     )
                 );
+                this.props.dispatch(prayerActions.addRefreshRequest());
             })
             .catch(() => {
                 this.props.dispatch(
@@ -71,30 +76,13 @@ class PrayerList extends Component {
             });
     }
 
-    componentWillMount() {
-        getAllPrayers()
-            .then(prayers => {
-                this.setState({ prayers });
-            })
-            .catch(() => {
-                this.props.dispatch(
-                    notificationActions.add(
-                        <FormattedMessage
-                            id="container.prayerList.failedToRetrievePrayers"
-                            defaultMessage="Failed to retrieve prayers"
-                        />
-                    )
-                );
-            });
-    }
-
     render() {
         const userId = getUserId();
 
         return (
             <div>
                 <List
-                    items={this.state.prayers.map(prayer => {
+                    items={this.props.prayers.map(prayer => {
                         prayer.isMine = userId === prayer.userId;
                         return prayer;
                     })}
@@ -122,7 +110,9 @@ class PrayerList extends Component {
 }
 
 PrayerList = connect(state => {
-    return {};
+    return {
+        prayers: state.prayer.list
+    };
 })(PrayerList);
 
 export default PrayerList;

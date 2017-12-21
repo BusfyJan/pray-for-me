@@ -3,7 +3,10 @@ import RequestButton from "component/prayer/add/Button.js";
 import RequestForm from "component/prayer/add/Form.js";
 import { add as addPrayer } from "module/prayer.js";
 import { connect } from "react-redux";
-import { notification as notificationActions } from "actions/index.js";
+import {
+    notification as notificationActions,
+    prayer as prayerActions
+} from "actions/index.js";
 import { FormattedMessage } from "react-intl";
 
 class PrayerCreator extends Component {
@@ -27,6 +30,7 @@ class PrayerCreator extends Component {
                         />
                     )
                 );
+                this.props.dispatch(prayerActions.addRefreshRequest());
             })
             .catch(() => {
                 this.setState({ isRequestFormOpen: false });

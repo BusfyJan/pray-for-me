@@ -14,9 +14,5 @@
   {
     "id": "container.prayerList.prayerClosingFailed",
     "defaultMessage": "Prayer request closing failed"
-  },
-  {
-    "id": "container.prayerList.failedToRetrievePrayers",
-    "defaultMessage": "Failed to retrieve prayers"
   }
 ]

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PushSettings from "container/PushSettings.js";
 import PrayerCreator from "container/PrayerCreator.js";
 import PrayerList from "container/PrayerList.js";
+import PrayerRefresher from "container/PrayerRefresher.js";
 import NotificationDisplayer from "container/NotificationDisplayer.js";
 import styled from "styled-components";
 
@@ -16,8 +17,9 @@ class App extends Component {
             <Wrapper>
                 <PushSettings />
                 <PrayerCreator />
-                <NotificationDisplayer />
                 <PrayerList />
+                <PrayerRefresher />
+                <NotificationDisplayer />
             </Wrapper>
         );
     }
