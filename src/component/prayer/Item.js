@@ -4,6 +4,7 @@ import Card, { CardHeader, CardContent, CardActions } from "material-ui/Card";
 import { FormattedMessage } from "react-intl";
 import Button from "material-ui/Button";
 import AddIcon from "material-ui-icons/Add";
+import DoneIcon from "material-ui-icons/Done";
 import Divider from "material-ui/Divider";
 import PrayerIcon from "component/prayer/Icon.js";
 import PrayerTitle from "component/prayer/Title.js";
@@ -21,7 +22,7 @@ const ActionsWrapper = styled.div`
     margin-right: 5px;
 `;
 
-const OwnReqeustInfoWrapper = styled.span`
+const OwnRequestInfoWrapper = styled.span`
     font-weight: bold;
     color: white;
     padding: 3px 5px;
@@ -49,12 +50,12 @@ class Item extends Component {
                         <span>
                             <PrayerTitle type={this.props.data.type} />
                             {this.props.data.isMine ? (
-                                <OwnReqeustInfoWrapper>
+                                <OwnRequestInfoWrapper>
                                     <FormattedMessage
                                         id="component.prayer.item.yours"
                                         defaultMessage="yours"
                                     />
-                                </OwnReqeustInfoWrapper>
+                                </OwnRequestInfoWrapper>
                             ) : null}
                         </span>
                     }
@@ -96,7 +97,7 @@ class Item extends Component {
                                     defaultMessage="Close prayer request"
                                 />
                                 &nbsp;
-                                <AddIcon />
+                                <DoneIcon />
                             </Button>
                         ) : (
                             <Button
