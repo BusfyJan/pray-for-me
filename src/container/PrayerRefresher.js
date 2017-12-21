@@ -6,6 +6,7 @@ import {
 } from "actions/index.js";
 import { getAll as getAllPrayers } from "module/prayer.js";
 import { FormattedMessage } from "react-intl";
+import RefreshButton from "component/prayer/RefreshButton.js";
 
 class PrayerRefresher extends Component {
     constructor() {
@@ -29,6 +30,10 @@ class PrayerRefresher extends Component {
             this.props.refreshRequests.length ===
             prevProps.refreshRequests.length
         ) {
+            return;
+        }
+
+        if (this.state.isRefreshing === true) {
             return;
         }
 
@@ -65,17 +70,13 @@ class PrayerRefresher extends Component {
     }
 
     render() {
-        if (!this.state.isRefreshing) {
-            return null;
-        }
-
         return (
-            <div>
-                <FormattedMessage
-                    id="container.prayerRefresher.refreshing"
-                    defaultMessage="Refreshing prayers"
-                />
-            </div>
+            <RefreshButton
+                active={this.state.isRefreshing}
+                onClick={() => {
+                    this.props.dispatch(prayerActions.addRefreshRequest());
+                }}
+            />
         );
     }
 }

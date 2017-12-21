@@ -37,6 +37,5 @@
   "container.prayerList.deedAddingFailed": "Deed adding failed",
   "container.prayerList.prayerClosedSuccessfully": "Prayer request was successfully closed",
   "container.prayerList.prayerClosingFailed": "Prayer request closing failed",
-  "container.prayerRefresher.failedToRetrievePrayers": "Failed to retrieve prayers",
-  "container.prayerRefresher.refreshing": "Refreshing prayers"
+  "container.prayerRefresher.failedToRetrievePrayers": "Failed to retrieve prayers"
 } }

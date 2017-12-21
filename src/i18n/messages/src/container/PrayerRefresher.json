@@ -2,9 +2,5 @@
   {
     "id": "container.prayerRefresher.failedToRetrievePrayers",
     "defaultMessage": "Failed to retrieve prayers"
-  },
-  {
-    "id": "container.prayerRefresher.refreshing",
-    "defaultMessage": "Refreshing prayers"
   }
 ]
