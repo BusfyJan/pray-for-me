@@ -8,5 +8,5 @@ export const add = (prayerId, deedType) => {
         .push({
             type: deedType,
             userId: getUserId()
-        }).key;
+        });
 };

@@ -4,6 +4,7 @@ import Grid from "material-ui/Grid";
 import Paper from "material-ui/Paper";
 import Typography from "material-ui/Typography";
 import styled from "styled-components";
+import { FormattedMessage } from "react-intl";
 
 const PaperStyled = styled(Paper)`
     && {
@@ -18,15 +19,24 @@ class List extends Component {
                 <Grid item xs={12}>
                     <PaperStyled>
                         <Typography type="headline" component="h3">
-                            Prayer requests
+                            <FormattedMessage
+                                id="component.prayer.list.heading"
+                                defaultMessage="Prayer requests"
+                            />
                         </Typography>
                         <Typography component="p">
-                            Here you can see all prayer requests which need
-                            deeds to be added to them
+                            <FormattedMessage
+                                id="component.prayer.list.subheading1"
+                                defaultMessage="Here you can see all prayer requests which need
+                                deeds to be added to them"
+                            />
                         </Typography>
                         <Typography component="p">
-                            You can add deed by clicking the button on the
-                            bottom of each prayer request
+                            <FormattedMessage
+                                id="component.prayer.list.subheading2"
+                                defaultMessage="You can add deed by clicking the button on the
+                                bottom of each prayer request"
+                            />
                         </Typography>
                     </PaperStyled>
                 </Grid>
@@ -37,6 +47,11 @@ class List extends Component {
                                 data={prayer}
                                 onResponseRequest={() => {
                                     this.props.onItemResponseRequest(prayer.id);
+                                }}
+                                onCloseRequest={() => {
+                                    return this.props.onItemCloseRequest(
+                                        prayer.id
+                                    );
                                 }}
                             />
                         </Grid>

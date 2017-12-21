@@ -1,5 +1,9 @@
 import React, { Component } from "react";
-import { getAll as getAllPrayers } from "module/prayer.js";
+import { getId as getUserId } from "module/user.js";
+import {
+    getAll as getAllPrayers,
+    close as closePrayer
+} from "module/prayer.js";
 import { add as addDeed } from "module/deed.js";
 import { connect } from "react-redux";
 import { notification as notificationActions } from "actions/index.js";
@@ -18,19 +22,53 @@ class PrayerList extends Component {
     }
 
     onAddFormSubmit(deedType) {
-        return new Promise((resolve, reject) => {
-            addDeed(this.state.prayerIdToResponseTo, deedType);
-            this.setState({ prayerIdToResponseTo: null });
-            this.props.dispatch(
-                notificationActions.add(
-                    <FormattedMessage
-                        id="container.prayerList.deedAdded"
-                        defaultMessage="Deed was successfully added to prayer"
-                    />
-                )
-            );
-            resolve();
-        });
+        return addDeed(this.state.prayerIdToResponseTo, deedType)
+            .then(() => {
+                this.setState({ prayerIdToResponseTo: null });
+                this.props.dispatch(
+                    notificationActions.add(
+                        <FormattedMessage
+                            id="container.prayerList.deedAddedSuccessfully"
+                            defaultMessage="Deed was successfully added to prayer"
+                        />
+                    )
+                );
+            })
+            .catch(() => {
+                this.setState({ prayerIdToResponseTo: null });
+                this.props.dispatch(
+                    notificationActions.add(
+                        <FormattedMessage
+                            id="container.prayerList.deedAddingFailed"
+                            defaultMessage="Deed adding failed"
+                        />
+                    )
+                );
+            });
+    }
+
+    onPrayerClose(prayerId) {
+        return closePrayer(prayerId)
+            .then(() => {
+                this.props.dispatch(
+                    notificationActions.add(
+                        <FormattedMessage
+                            id="container.prayerList.prayerClosedSuccessfully"
+                            defaultMessage="Prayer request was successfully closed"
+                        />
+                    )
+                );
+            })
+            .catch(() => {
+                this.props.dispatch(
+                    notificationActions.add(
+                        <FormattedMessage
+                            id="container.prayerList.prayerClosingFailed"
+                            defaultMessage="Prayer request closing failed"
+                        />
+                    )
+                );
+            });
     }
 
     componentWillMount() {
@@ -51,14 +89,22 @@ class PrayerList extends Component {
     }
 
     render() {
+        const userId = getUserId();
+
         return (
             <div>
                 <List
-                    items={this.state.prayers}
-                    onItemResponseRequest={id => {
+                    items={this.state.prayers.map(prayer => {
+                        prayer.isMine = userId === prayer.userId;
+                        return prayer;
+                    })}
+                    onItemResponseRequest={prayerId => {
                         this.setState({
-                            prayerIdToResponseTo: id
+                            prayerIdToResponseTo: prayerId
                         });
+                    }}
+                    onItemCloseRequest={prayerId => {
+                        return this.onPrayerClose(prayerId);
                     }}
                 />
                 <ResponseForm

@@ -12,7 +12,7 @@
         "react-redux": "^5.0.6",
         "react-scripts": "1.0.17",
         "redux": "^3.7.2",
-        "styled-components": "^2.3.2"
+        "styled-components": "^2.3.3"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -22,7 +22,8 @@
         "translate": "npm run translate:cleanup && npm run translate:extract && npm run translate:prepare",
         "translate:cleanup": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/cleanup.js",
         "translate:extract": "NODE_ENV=production babel ./src >/dev/null",
-        "translate:prepare": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/translator.js"
+        "translate:prepare": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/translator.js",
+        "deploy": "firebase deploy"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",

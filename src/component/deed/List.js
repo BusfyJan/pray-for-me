@@ -43,7 +43,7 @@ class List extends Component {
                             <NoItemsTextWrapper>
                                 <FormattedMessage
                                     id="component.deed.list.deedsTitleEmpty"
-                                    defaultMessage="No deeds for this prayer were added yet"
+                                    defaultMessage="No deeds for this prayer yet"
                                 />
                             </NoItemsTextWrapper>
                         ) : null}

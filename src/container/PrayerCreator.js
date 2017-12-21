@@ -16,19 +16,29 @@ class PrayerCreator extends Component {
     }
 
     onAddFormSubmit(prayerType) {
-        return new Promise((resolve, reject) => {
-            addPrayer(prayerType);
-            this.setState({ isRequestFormOpen: false });
-            this.props.dispatch(
-                notificationActions.add(
-                    <FormattedMessage
-                        id="container.prayerCreator.prayerAdded"
-                        defaultMessage="Prayer request was successfully created"
-                    />
-                )
-            );
-            resolve();
-        });
+        return addPrayer(prayerType)
+            .then(() => {
+                this.setState({ isRequestFormOpen: false });
+                this.props.dispatch(
+                    notificationActions.add(
+                        <FormattedMessage
+                            id="container.prayerCreator.prayerAddedSuccessfully"
+                            defaultMessage="Prayer request was successfully created"
+                        />
+                    )
+                );
+            })
+            .catch(() => {
+                this.setState({ isRequestFormOpen: false });
+                this.props.dispatch(
+                    notificationActions.add(
+                        <FormattedMessage
+                            id="container.prayerCreator.prayerAddingFailed"
+                            defaultMessage="Prayer request creation failed"
+                        />
+                    )
+                );
+            });
     }
 
     render() {

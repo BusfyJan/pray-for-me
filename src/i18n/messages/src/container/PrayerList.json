@@ -1,7 +1,19 @@
 [
   {
-    "id": "container.prayerList.deedAdded",
+    "id": "container.prayerList.deedAddedSuccessfully",
     "defaultMessage": "Deed was successfully added to prayer"
+  },
+  {
+    "id": "container.prayerList.deedAddingFailed",
+    "defaultMessage": "Deed adding failed"
+  },
+  {
+    "id": "container.prayerList.prayerClosedSuccessfully",
+    "defaultMessage": "Prayer request was successfully closed"
+  },
+  {
+    "id": "container.prayerList.prayerClosingFailed",
+    "defaultMessage": "Prayer request closing failed"
   },
   {
     "id": "container.prayerList.failedToRetrievePrayers",

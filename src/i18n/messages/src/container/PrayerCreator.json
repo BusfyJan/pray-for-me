@@ -1,6 +1,10 @@
 [
   {
-    "id": "container.prayerCreator.prayerAdded",
+    "id": "container.prayerCreator.prayerAddedSuccessfully",
     "defaultMessage": "Prayer request was successfully created"
+  },
+  {
+    "id": "container.prayerCreator.prayerAddingFailed",
+    "defaultMessage": "Prayer request creation failed"
   }
 ]
