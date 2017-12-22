@@ -4,6 +4,9 @@
         ".write": true,
         "prayers": {
             ".indexOn": ["timestamp"]
+        },
+        "tokens": {
+            ".indexOn": ["enabled"]
         }
     }
 }

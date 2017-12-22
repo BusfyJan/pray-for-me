@@ -15,15 +15,17 @@ exports.newPrayerAdded = functions.database
         return admin
             .database()
             .ref("tokens")
+            .orderByChild("enabled")
+            .equalTo(true)
             .once("value")
             .then(snapshot => {
-                const tokens = snapshot.val();
-                for (var i in tokens) {
+                const tokensData = snapshot.val();
+                for (var i in tokensData) {
                     if (i === userId) {
                         continue;
                     }
 
-                    admin.messaging().sendToDevice(tokens[i], {
+                    admin.messaging().sendToDevice(tokensData[i].token, {
                         data: {
                             title: "New prayer request added",
                             message: "Somebody needs your prayer"
@@ -52,8 +54,12 @@ exports.newDeedAdded = functions.database
                     .then(snapshot => {
                         return snapshot.val();
                     })
-                    .then(token => {
-                        return admin.messaging().sendToDevice(token, {
+                    .then(tokenData => {
+                        if (!tokenData.enabled) {
+                            return;
+                        }
+
+                        return admin.messaging().sendToDevice(tokenData.token, {
                             data: {
                                 title: "New deed to your prayer request added",
                                 message:

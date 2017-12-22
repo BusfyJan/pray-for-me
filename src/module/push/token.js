@@ -25,5 +25,8 @@ const saveToken = token => {
     return firebase
         .database()
         .ref("tokens/" + getUserId())
-        .set(token);
+        .set({
+            token,
+            enabled: true
+        });
 };
