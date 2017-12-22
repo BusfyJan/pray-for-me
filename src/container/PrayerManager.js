@@ -52,6 +52,17 @@ class PrayerManager extends Component {
                 this.setState({ isRefreshing: false }, () => {
                     this.props.dispatch(prayerActions.setList(prayers));
                     this.props.dispatch(prayerActions.popRefreshRequest());
+                    if (this.wasRefreshInitiatedByUser) {
+                        this.wasRefreshInitiatedByUser = false;
+                        this.props.dispatch(
+                            notificationActions.add(
+                                <FormattedMessage
+                                    id="container.prayerRefresher.listRefreshed"
+                                    defaultMessage="Prayer requests were refreshed"
+                                />
+                            )
+                        );
+                    }
                 });
             })
             .catch(() => {
@@ -76,14 +87,31 @@ class PrayerManager extends Component {
                 <FilterMineButton
                     active={this.props.onlyMine}
                     onClick={() => {
+                        const newSetting = !this.props.onlyMine;
                         this.props.dispatch(
-                            prayerActions.setOnlyMine(!this.props.onlyMine)
+                            prayerActions.setOnlyMine(newSetting)
+                        );
+                        this.props.dispatch(
+                            notificationActions.add(
+                                newSetting ? (
+                                    <FormattedMessage
+                                        id="container.prayerRefresher.onlyMineTurnedOn"
+                                        defaultMessage="Displaying only your prayer requests"
+                                    />
+                                ) : (
+                                    <FormattedMessage
+                                        id="container.prayerRefresher.onlyMineTurnedOff"
+                                        defaultMessage="Displaying all prayer requests"
+                                    />
+                                )
+                            )
                         );
                     }}
                 />
                 <RefreshButton
                     active={this.state.isRefreshing}
                     onClick={() => {
+                        this.wasRefreshInitiatedByUser = true;
                         this.props.dispatch(prayerActions.addRefreshRequest());
                     }}
                 />
