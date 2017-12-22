@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import MaterialButton from "material-ui/Button";
 import IconRefresh from "material-ui-icons/Loop";
 import { green } from "material-ui/colors";
+import Rotating from "component/util/Rotating.js";
 
 const MaterialButtonStyled = styled(MaterialButton)`
     && {
         position: fixed !important;
-        right: 18px;
-        bottom: 75px;
+        right: 7px;
+        top: 7px;
         z-index: 2;
         background: ${green[400]};
 
@@ -16,15 +17,6 @@ const MaterialButtonStyled = styled(MaterialButton)`
             background: ${green[500]};
         }
     }
-`;
-
-const animationKeyframe = keyframes`
-    from {transform:rotate(0deg);}
-    to {transform:rotate(360deg);}
-`;
-
-const IconRefreshRotating = styled(IconRefresh)`
-    animation: ${animationKeyframe} 1s linear infinite;
 `;
 
 class RefreshButton extends Component {
@@ -40,7 +32,13 @@ class RefreshButton extends Component {
                 mini
                 color="primary"
             >
-                {this.props.active ? <IconRefreshRotating /> : <IconRefresh />}
+                {this.props.active ? (
+                    <Rotating>
+                        <IconRefresh />
+                    </Rotating>
+                ) : (
+                    <IconRefresh />
+                )}
             </MaterialButtonStyled>
         );
     }

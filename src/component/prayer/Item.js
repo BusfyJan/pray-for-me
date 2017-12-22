@@ -5,7 +5,7 @@ import { FormattedMessage } from "react-intl";
 import Button from "material-ui/Button";
 import AddIcon from "material-ui-icons/Add";
 import DoneIcon from "material-ui-icons/Done";
-import { CircularProgress } from "material-ui/Progress";
+import CircularProgress from "component/util/CircularProgress.js";
 import Divider from "material-ui/Divider";
 import PrayerIcon from "component/prayer/Icon.js";
 import PrayerTitle from "component/prayer/Title.js";
@@ -31,12 +31,6 @@ const OwnRequestInfoWrapper = styled.span`
     background: ${green[500]};
     border-radius: 3px;
     font-size: 0.75em;
-`;
-
-const CircularProgressStyled = styled(CircularProgress)`
-    && {
-        color: white;
-    }
 `;
 
 class Item extends Component {
@@ -103,10 +97,10 @@ class Item extends Component {
                                 />
                                 &nbsp;
                                 {this.state.isClosing ? (
-                                    <CircularProgressStyled
+                                    <CircularProgress
                                         size={20}
                                         thickness={7}
-                                        color="accent"
+                                        color="white"
                                     />
                                 ) : (
                                     <DoneIcon />

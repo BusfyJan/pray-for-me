@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ListItem, ListItemIcon, ListItemText } from "material-ui/List";
-import { CircularProgress } from "material-ui/Progress";
+import CircularProgress from "component/util/CircularProgress.js";
 import DeedIcon from "component/deed/Icon.js";
 import DeedTitle from "component/deed/Title.js";
 

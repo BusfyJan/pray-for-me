@@ -1,31 +1,27 @@
 import React, { Component } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import MaterialButton from "material-ui/Button";
 import IconNotificationsNone from "material-ui-icons/NotificationsNone";
 import IconNotificationsActive from "material-ui-icons/NotificationsActive";
 import IconNotificationsOff from "material-ui-icons/NotificationsOff";
 import IconLoading from "material-ui-icons/Cached";
+import Rotating from "component/util/Rotating.js";
 
 const MaterialButtonStyled = styled(MaterialButton)`
     position: fixed !important;
-    right: 75px;
-    bottom: 18px;
+    left: 7px;
+    bottom: 7px;
     z-index: 2;
-`;
-
-const animationKeyframe = keyframes`
-    from {transform:rotate(0deg);}
-    to {transform:rotate(360deg);}
-`;
-
-const IconLoadingRotating = styled(IconLoading)`
-    animation: ${animationKeyframe} 1s linear infinite;
 `;
 
 class Button extends Component {
     getButtonIcon() {
         if (this.props.isWorking) {
-            return <IconLoadingRotating />;
+            return (
+                <Rotating>
+                    <IconLoading />
+                </Rotating>
+            );
         }
 
         if (this.props.isPushEnabled) {
