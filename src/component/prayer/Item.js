@@ -89,6 +89,7 @@ class Item extends Component {
                                     });
                                 }}
                                 raised
+                                dense
                                 color="primary"
                             >
                                 <FormattedMessage
@@ -112,6 +113,7 @@ class Item extends Component {
                                     this.props.onResponseRequest();
                                 }}
                                 raised
+                                dense
                                 color="primary"
                             >
                                 <FormattedMessage

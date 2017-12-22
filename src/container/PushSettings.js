@@ -5,9 +5,15 @@ import {
     canPermissionBeRequested as canPushPermissionBeRequested,
     requestPermission as requestPushPermission
 } from "module/push/permissions.js";
-import { init as initPushToken } from "module/push/token.js";
+import {
+    init as initPushToken,
+    updateSettings as updatePushNotificationSettings
+} from "module/push/token.js";
 import Button from "component/push/Button.js";
 import Info from "component/push/Info.js";
+import { notification as notificationActions } from "actions/index.js";
+import { connect } from "react-redux";
+import { FormattedMessage } from "react-intl";
 
 class PushSettings extends Component {
     constructor() {
@@ -46,7 +52,14 @@ class PushSettings extends Component {
                 })
                 .catch(error => {
                     this.setState({ isWorking: false });
-                    console.log("Token init failure", error);
+                    this.props.dispatch(
+                        notificationActions.add(
+                            <FormattedMessage
+                                id="container.pushSettings.initTokenFailed"
+                                defaultMessage="Initialization of push notifications failed"
+                            />
+                        )
+                    );
                 });
         });
     }
@@ -60,19 +73,40 @@ class PushSettings extends Component {
     }
 
     onRequestPermissionsClicked() {
-        this.setState({ isWorking: true }, () => {
+        this.setState({ isWorking: true, isInfoVisible: false }, () => {
             requestPushPermission()
+                .then(() => {
+                    return updatePushNotificationSettings({
+                        notifyWhenNewPrayerRequestWasAdded: true,
+                        notifyWhenDeedWasAddedToMyPrayerRequest: true
+                    });
+                })
                 .then(() => {
                     this.setState({ isWorking: false }, () => {
                         this.refreshPushInfo();
                         this.initPushToken();
                     });
+                    this.props.dispatch(
+                        notificationActions.add(
+                            <FormattedMessage
+                                id="container.pushNotifications.enablingSucceeded"
+                                defaultMessage="Push notifications were successfully enabled"
+                            />
+                        )
+                    );
                 })
                 .catch(error => {
-                    console.log("Error occured", error);
                     this.setState({ isWorking: false }, () => {
                         this.refreshPushInfo();
                     });
+                    this.props.dispatch(
+                        notificationActions.add(
+                            <FormattedMessage
+                                id="container.pushNotifications.enablingFailed"
+                                defaultMessage="Push notifications were disabled"
+                            />
+                        )
+                    );
                 });
         });
     }
@@ -107,5 +141,9 @@ class PushSettings extends Component {
         );
     }
 }
+
+PushSettings = connect(state => {
+    return {};
+})(PushSettings);
 
 export default PushSettings;

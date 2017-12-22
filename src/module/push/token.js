@@ -6,6 +6,23 @@ export const init = () => {
     return updateToken();
 };
 
+export const getSettings = () => {
+    return firebase
+        .database()
+        .ref("tokens/" + getUserId())
+        .once("value")
+        .then(snapshot => {
+            return snapshot.val();
+        });
+};
+
+export const updateSettings = settings => {
+    return firebase
+        .database()
+        .ref("tokens/" + getUserId())
+        .update(settings);
+};
+
 const updateToken = () => {
     return firebase
         .messaging()
@@ -25,8 +42,7 @@ const saveToken = token => {
     return firebase
         .database()
         .ref("tokens/" + getUserId())
-        .set({
-            token,
-            enabled: true
+        .update({
+            token
         });
 };

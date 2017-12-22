@@ -1,0 +1,14 @@
+[
+  {
+    "id": "container.pushSettings.initTokenFailed",
+    "defaultMessage": "Initialization of push notifications failed"
+  },
+  {
+    "id": "container.pushNotifications.enablingSucceeded",
+    "defaultMessage": "Push notifications were successfully enabled"
+  },
+  {
+    "id": "container.pushNotifications.enablingFailed",
+    "defaultMessage": "Push notifications were disabled"
+  }
+]

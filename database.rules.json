@@ -6,7 +6,10 @@
             ".indexOn": ["timestamp"]
         },
         "tokens": {
-            ".indexOn": ["enabled"]
+            ".indexOn": [
+                "notifyWhenNewPrayerRequestWasAdded",
+                "notifyWhenDeedWasAddedToMyPrayerRequest"
+            ]
         }
     }
 }

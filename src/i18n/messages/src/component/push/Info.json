@@ -1,7 +1,7 @@
 [
   {
     "id": "component.push.info.notificationsManuallyDisabled",
-    "defaultMessage": "Notifications are manually disabled. You can enable them in browser setting"
+    "defaultMessage": "Notifications are manually disabled. You can enable them in browser settings"
   },
   {
     "id": "component.push.info.notificationsDisabled",
@@ -12,11 +12,7 @@
     "defaultMessage": "Enable notifications"
   },
   {
-    "id": "component.push.info.notificationsEnabled",
-    "defaultMessage": "Notifications are enabled"
-  },
-  {
     "id": "component.push.info.title",
-    "defaultMessage": "Notifications info"
+    "defaultMessage": "Notifications settings"
   }
 ]

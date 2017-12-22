@@ -15,7 +15,7 @@ exports.newPrayerAdded = functions.database
         return admin
             .database()
             .ref("tokens")
-            .orderByChild("enabled")
+            .orderByChild("notifyWhenNewPrayerRequestWasAdded")
             .equalTo(true)
             .once("value")
             .then(snapshot => {
@@ -55,7 +55,9 @@ exports.newDeedAdded = functions.database
                         return snapshot.val();
                     })
                     .then(tokenData => {
-                        if (!tokenData.enabled) {
+                        if (
+                            !tokenData.notifyWhenDeedWasAddedToMyPrayerRequest
+                        ) {
                             return;
                         }
 

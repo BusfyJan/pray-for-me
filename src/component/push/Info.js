@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import Dialog, {
-    DialogTitle,
-    DialogContent,
-    DialogContentText
-} from "material-ui/Dialog";
+import Dialog, { DialogTitle, DialogContent } from "material-ui/Dialog";
 import Button from "material-ui/Button";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
+import PushNotifications from "container/PushNotifications.js";
+import Typography from "material-ui/Typography";
 
 const ButtonStyled = styled(Button)`
     float: right;
@@ -16,16 +14,18 @@ class Info extends Component {
     getInfoText() {
         if (!this.props.isPushEnabled && !this.props.canPushBeEnabled) {
             return (
-                <FormattedMessage
-                    id="component.push.info.notificationsManuallyDisabled"
-                    defaultMessage={`Notifications are manually disabled. You can enable them in browser setting`}
-                />
+                <Typography>
+                    <FormattedMessage
+                        id="component.push.info.notificationsManuallyDisabled"
+                        defaultMessage={`Notifications are manually disabled. You can enable them in browser settings`}
+                    />
+                </Typography>
             );
         }
 
         if (!this.props.isPushEnabled && this.props.canPushBeEnabled) {
             return (
-                <span>
+                <Typography>
                     <FormattedMessage
                         id="component.push.info.notificationsDisabled"
                         defaultMessage={`Notifications are disabled. You can enable them by clicking the button`}
@@ -44,14 +44,15 @@ class Info extends Component {
                             defaultMessage={`Enable notifications`}
                         />
                     </ButtonStyled>
-                </span>
+                </Typography>
             );
         }
 
         return (
-            <FormattedMessage
-                id="component.push.info.notificationsEnabled"
-                defaultMessage={`Notifications are enabled`}
+            <PushNotifications
+                onSettingsUpdated={() => {
+                    this.props.onRequestClose();
+                }}
             />
         );
     }
@@ -67,12 +68,10 @@ class Info extends Component {
                 <DialogTitle>
                     <FormattedMessage
                         id="component.push.info.title"
-                        defaultMessage={`Notifications info`}
+                        defaultMessage={`Notifications settings`}
                     />
                 </DialogTitle>
-                <DialogContent>
-                    <DialogContentText>{this.getInfoText()}</DialogContentText>
-                </DialogContent>
+                <DialogContent>{this.getInfoText()}</DialogContent>
             </Dialog>
         );
     }

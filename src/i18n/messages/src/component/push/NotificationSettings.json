@@ -1,0 +1,10 @@
+[
+  {
+    "id": "component.push.notificationSettings.notifyWhenNewPrayerRequestWasAdded",
+    "defaultMessage": "Notify when new prayer request was added"
+  },
+  {
+    "id": "component.push.notificationSettings.notifyWhenDeedWasAddedToMyPrayerRequest",
+    "defaultMessage": "Notify when new deed was added to my prayer request"
+  }
+]

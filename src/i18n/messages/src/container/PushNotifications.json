@@ -1,0 +1,18 @@
+[
+  {
+    "id": "container.pushNotifications.fetching",
+    "defaultMessage": "Fetching push notification Settings"
+  },
+  {
+    "id": "container.pushNotifications.failedToFetch",
+    "defaultMessage": "Failed to retrieve push notification settings"
+  },
+  {
+    "id": "container.pushNotifications.updateSuccess",
+    "defaultMessage": "Settings were successfully updated"
+  },
+  {
+    "id": "container.pushNotifications.updatingFailed",
+    "defaultMessage": "Failed to update settings"
+  }
+]
