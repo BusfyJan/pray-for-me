@@ -46,7 +46,7 @@ class PushNotificationSettings extends Component {
                         &nbsp;&nbsp;
                         <FormattedMessage
                             id="container.pushNotifications.fetching"
-                            defaultMessage="Fetching push notification Settings"
+                            defaultMessage="Fetching push notification settings"
                         />
                     </Typography>
                 </div>
@@ -74,15 +74,11 @@ class PushNotificationSettings extends Component {
                 }
                 onSubmit={data => {
                     return updatePushNotificationSettings({
-                        notifyWhenNewPrayerRequestWasAdded: this.state.data
-                            .notifyWhenNewPrayerRequestWasAdded
-                            ? this.state.data.notifyWhenNewPrayerRequestWasAdded
-                            : false,
-                        notifyWhenDeedWasAddedToMyPrayerRequest: this.state.data
-                            .notifyWhenDeedWasAddedToMyPrayerRequest
-                            ? this.state.data
-                                  .notifyWhenDeedWasAddedToMyPrayerRequest
-                            : false
+                        notifyWhenNewPrayerRequestWasAdded:
+                            data.notifyWhenNewPrayerRequestWasAdded === true,
+                        notifyWhenDeedWasAddedToMyPrayerRequest:
+                            data.notifyWhenDeedWasAddedToMyPrayerRequest ===
+                            true
                     })
                         .then(() => {
                             this.props.dispatch(

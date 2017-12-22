@@ -1,7 +1,7 @@
 [
   {
     "id": "container.pushNotifications.fetching",
-    "defaultMessage": "Fetching push notification Settings"
+    "defaultMessage": "Fetching push notification settings"
   },
   {
     "id": "container.pushNotifications.failedToFetch",

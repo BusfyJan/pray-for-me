@@ -42,7 +42,7 @@
   "container.prayerRefresher.failedToRetrievePrayers": "Failed to retrieve prayers",
   "container.prayerRefresher.onlyMineTurnedOn": "Displaying only your prayer requests",
   "container.prayerRefresher.onlyMineTurnedOff": "Displaying all prayer requests",
-  "container.pushNotifications.fetching": "Fetching push notification Settings",
+  "container.pushNotifications.fetching": "Fetching push notification settings",
   "container.pushNotifications.failedToFetch": "Failed to retrieve push notification settings",
   "container.pushNotifications.updateSuccess": "Settings were successfully updated",
   "container.pushNotifications.updatingFailed": "Failed to update settings",
