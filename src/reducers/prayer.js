@@ -1,8 +1,13 @@
 import { prayer as prayerActions } from "actions/index.js";
-const defaultState = { list: [], refreshRequests: [] };
+const defaultState = { list: [], refreshRequests: [], onlyMine: false };
 
 const prayer = (state = defaultState, action) => {
     switch (action.type) {
+        case prayerActions.SET_ONLY_MINE:
+            return Object.assign({}, state, {
+                onlyMine: action.onlyMine
+            });
+
         case prayerActions.SET_LIST:
             return Object.assign({}, state, {
                 list: action.list

@@ -7,8 +7,9 @@ import {
 import { getAll as getAllPrayers } from "module/prayer.js";
 import { FormattedMessage } from "react-intl";
 import RefreshButton from "component/prayer/RefreshButton.js";
+import FilterMineButton from "component/prayer/FilterMineButton.js";
 
-class PrayerRefresher extends Component {
+class PrayerManager extends Component {
     constructor() {
         super();
 
@@ -71,21 +72,32 @@ class PrayerRefresher extends Component {
 
     render() {
         return (
-            <RefreshButton
-                active={this.state.isRefreshing}
-                onClick={() => {
-                    this.props.dispatch(prayerActions.addRefreshRequest());
-                }}
-            />
+            <div>
+                <FilterMineButton
+                    active={this.props.onlyMine}
+                    onClick={() => {
+                        this.props.dispatch(
+                            prayerActions.setOnlyMine(!this.props.onlyMine)
+                        );
+                    }}
+                />
+                <RefreshButton
+                    active={this.state.isRefreshing}
+                    onClick={() => {
+                        this.props.dispatch(prayerActions.addRefreshRequest());
+                    }}
+                />
+            </div>
         );
     }
 }
 
-PrayerRefresher = connect(state => {
+PrayerManager = connect(state => {
     return {
+        onlyMine: state.prayer.onlyMine,
         list: state.prayer.list,
         refreshRequests: state.prayer.refreshRequests
     };
-})(PrayerRefresher);
+})(PrayerManager);
 
-export default PrayerRefresher;
+export default PrayerManager;

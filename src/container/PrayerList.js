@@ -82,10 +82,18 @@ class PrayerList extends Component {
         return (
             <div>
                 <List
-                    items={this.props.prayers.map(prayer => {
-                        prayer.isMine = userId === prayer.userId;
-                        return prayer;
-                    })}
+                    items={this.props.prayers
+                        .map(prayer => {
+                            prayer.isMine = userId === prayer.userId;
+                            return prayer;
+                        })
+                        .filter(prayer => {
+                            if (!this.props.onlyMinePrayers) {
+                                return true;
+                            }
+
+                            return prayer.isMine;
+                        })}
                     onItemResponseRequest={prayerId => {
                         this.setState({
                             prayerIdToResponseTo: prayerId
@@ -111,7 +119,8 @@ class PrayerList extends Component {
 
 PrayerList = connect(state => {
     return {
-        prayers: state.prayer.list
+        prayers: state.prayer.list,
+        onlyMinePrayers: state.prayer.onlyMine
     };
 })(PrayerList);
 
