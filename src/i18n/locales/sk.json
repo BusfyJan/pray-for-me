@@ -6,7 +6,7 @@
         "component.deed.title.guidance": "Modlitba",
         "component.deed.title.health": "Svätá omša",
         "component.prayer.add.form.title":
-            "V akej oblasti si praješ vidieť zázraky? ☺",
+            "V akej oblasti si praješ vidieť zázraky?",
         "component.prayer.add.form.cancel": "Zrušiť",
         "component.prayer.description.guidance":
             "Pomoc nájsť správnu cestu, rozhodnúť sa a nájsť odpovede",
@@ -21,13 +21,13 @@
         "component.prayer.description.time":
             "Vedieť správne využiť čas, ktorý nám je daný",
         "component.prayer.item.yours": "Moja prosba",
-        "component.prayer.item.closePrayerRequest": "Zrušiť prosbu",
+        "component.prayer.item.closePrayerRequest": "Zatvoriť prosbu",
         "component.prayer.item.addDeedButton": "Chcem pomôcť",
         "component.prayer.list.heading": "Aktuálne prosby",
         "component.prayer.list.subheading1":
             "Tu nájdeš naše prosby, na úmysly ktorých môžeš obetovať modlitbu, sv. omšu alebo čokoľvek uznáš za vhodné",
         "component.prayer.list.subheading2":
-            "Klikni na ikonku „Chcem pomôcť“ a zaznač tak tvoj skutok ku prosbe, aby sa mohla stať skutočnosťou",
+            "Klikni na ikonku Chcem pomôcť a zaznač tak tvoj skutok ku prosbe, aby sa mohla stať skutočnosťou",
         "component.prayer.title.guidance": "Viera a zmysel života",
         "component.prayer.title.health": "Zdravie",
         "component.prayer.title.joy": "Radosť a šťastie",
@@ -50,24 +50,26 @@
             "Prosbu sa nepodarilo zdieľať",
         "container.prayerList.deedAddedSuccessfully": "Skutok pomoci zdieľaný",
         "container.prayerList.deedAddingFailed":
-            " Skutok pomoci sa nepodarilo zdieľať",
+            "Skutok pomoci sa nepodarilo zdieľať",
         "container.prayerList.prayerClosedSuccessfully": "Prosba bola zrušená",
         "container.prayerList.prayerClosingFailed":
             "Prosbu sa nepodarilo zrušiť",
         "container.prayerRefresher.listRefreshed": "Prosby sú aktualizované",
         "container.prayerRefresher.failedToRetrievePrayers":
             "Prosby sa nepodarilo nájsť?",
-        "container.prayerRefresher.onlyMineTurnedOn": "Moje prosby",
-        "container.prayerRefresher.onlyMineTurnedOff": "Všetky prosby",
+        "container.prayerRefresher.onlyMineTurnedOn": "Zobrazujem moje prosby",
+        "container.prayerRefresher.onlyMineTurnedOff":
+            "Zobrazujem všetky prosby",
         "container.pushNotifications.fetching":
-            "Načítať nastavenia upozornení?",
+            "Načítavam nastavenia upozornení",
         "container.pushNotifications.failedToFetch":
-            "Nepodarilo sa nájsť nastavenia upozornení",
-        "container.pushNotifications.updateSuccess": "Nastavenia boli zmenené",
+            "Nepodarilo sa načítať nastavenia upozornení",
+        "container.pushNotifications.updateSuccess":
+            "Nastavenia boli úspešne zmenené",
         "container.pushNotifications.updatingFailed":
             "Nastavenia sa nepodarilo zmeniť",
         "container.pushSettings.initTokenFailed":
-            "Upozornenia sa nepodarilo obnoviť?",
+            "Upozornenia sa nepodarilo nastaviť",
         "container.pushNotifications.enablingSucceeded": "Upozornenia zapnuté",
         "container.pushNotifications.enablingFailed": " Upozornenia vypnuté"
     }
