@@ -66,6 +66,24 @@ class Title extends Component {
             );
         }
 
+        if (this.props.type === "schoolAndJob") {
+            return (
+                <FormattedMessage
+                    id="component.prayer.title.schoolAndJob"
+                    defaultMessage="School & job"
+                />
+            );
+        }
+
+        if (this.props.type === "motivation") {
+            return (
+                <FormattedMessage
+                    id="component.prayer.title.motivation"
+                    defaultMessage="Motivation"
+                />
+            );
+        }
+
         throw new Error(
             "Title for type " + this.props.type + " not supported!"
         );

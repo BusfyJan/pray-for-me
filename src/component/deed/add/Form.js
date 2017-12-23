@@ -8,7 +8,7 @@ import Item from "component/deed/add/FormItem";
 import styled from "styled-components";
 import { red } from "material-ui/colors";
 
-const deedTypes = ["prayer", "mass"];
+const deedTypes = ["prayer", "mass", "goodDeed"];
 
 const CancelIconStyled = styled(CancelIcon)`
     && {

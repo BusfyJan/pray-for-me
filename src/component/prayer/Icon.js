@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import HealthIcon from "material-ui-icons/Accessibility";
 import MoneyIcon from "material-ui-icons/AttachMoney";
 import RelationshipsIcon from "material-ui-icons/Favorite";
-import TimeIcon from "material-ui-icons/HourglassEmpty";
+import TimeIcon from "material-ui-icons/Watch";
 import GuidanceIcon from "material-ui-icons/Gesture";
 import JoyIcon from "material-ui-icons/InsertEmoticon";
 import PeaceIcon from "material-ui-icons/FilterVintage";
+import MotivationIcon from "material-ui-icons/Whatshot";
+import SchoolAndJobIcon from "material-ui-icons/School";
 import {
     green,
     blue,
@@ -55,6 +57,16 @@ class Icon extends Component {
         if (this.props.type === "time") {
             Icon = TimeIcon;
             color = orange[500];
+        }
+
+        if (this.props.type === "schoolAndJob") {
+            Icon = SchoolAndJobIcon;
+            color = blue[500];
+        }
+
+        if (this.props.type === "motivation") {
+            Icon = MotivationIcon;
+            color = deepPurple[500];
         }
 
         if (Icon === null) {

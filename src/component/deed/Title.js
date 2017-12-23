@@ -21,6 +21,15 @@ class Title extends Component {
             );
         }
 
+        if (this.props.type === "goodDeed") {
+            return (
+                <FormattedMessage
+                    id="component.deed.title.goodDeed"
+                    defaultMessage="Good deed"
+                />
+            );
+        }
+
         throw new Error(
             "Title for type " + this.props.type + " not supported!"
         );

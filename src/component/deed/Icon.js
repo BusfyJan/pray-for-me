@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import MassIcon from "material-ui-icons/Home";
-import PrayerIcon from "material-ui-icons/ChatBubbleOutline";
-import { green, blue } from "material-ui/colors";
+import PrayerIcon from "material-ui-icons/RecordVoiceOver";
+import GoodDeedIcon from "material-ui-icons/FormatPaint";
+import { green, blue, red } from "material-ui/colors";
 import styled from "styled-components";
 
 class Icon extends Component {
@@ -11,12 +12,17 @@ class Icon extends Component {
 
         if (this.props.type === "prayer") {
             Icon = PrayerIcon;
-            color = green[500];
+            color = red[500];
         }
 
         if (this.props.type === "mass") {
             Icon = MassIcon;
             color = blue[500];
+        }
+
+        if (this.props.type === "goodDeed") {
+            Icon = GoodDeedIcon;
+            color = green[500];
         }
 
         if (Icon === null) {

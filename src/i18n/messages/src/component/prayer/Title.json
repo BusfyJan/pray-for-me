@@ -26,5 +26,13 @@
   {
     "id": "component.prayer.title.time",
     "defaultMessage": "Time"
+  },
+  {
+    "id": "component.prayer.title.schoolAndJob",
+    "defaultMessage": "School & job"
+  },
+  {
+    "id": "component.prayer.title.motivation",
+    "defaultMessage": "Motivation"
   }
 ]

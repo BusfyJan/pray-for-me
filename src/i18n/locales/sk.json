@@ -5,6 +5,7 @@
         "component.deed.list.deedsTitleEmpty": "Čaká sa na pomoc",
         "component.deed.title.guidance": "Modlitba",
         "component.deed.title.health": "Svätá omša",
+        "component.deed.title.goodDeed": "Dobrý skutok",
         "component.prayer.add.form.title":
             "V akej oblasti si praješ vidieť zázraky?",
         "component.prayer.add.form.cancel": "Zrušiť",
@@ -20,6 +21,10 @@
             "Požehnanie a posila v medziľudských vzťahoch",
         "component.prayer.description.time":
             "Vedieť správne využiť čas, ktorý nám je daný",
+        "component.prayer.description.schoolAndJob":
+            "Pomoc v škole alebo zamestnaní",
+        "component.prayer.description.motivation":
+            "Túžba po odvahe a odhodlaní",
         "component.prayer.item.yours": "Moja prosba",
         "component.prayer.item.closePrayerRequest": "Zatvoriť prosbu",
         "component.prayer.item.addDeedButton": "Chcem pomôcť",
@@ -35,6 +40,8 @@
         "component.prayer.title.peace": "Pokoj",
         "component.prayer.title.relationships": "Vzťahy",
         "component.prayer.title.time": "Čas",
+        "component.prayer.title.schoolAndJob": "Práca a škola",
+        "component.prayer.title.motivation": "Motivácia",
         "component.push.info.notificationsManuallyDisabled":
             "Upozornenia sú vypnuté. Môžeš ich zapnúť v nastaveniach prehliadača",
         "component.push.info.notificationsDisabled":

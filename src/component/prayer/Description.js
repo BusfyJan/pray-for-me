@@ -66,6 +66,24 @@ class Description extends Component {
             );
         }
 
+        if (this.props.type === "schoolAndJob") {
+            return (
+                <FormattedMessage
+                    id="component.prayer.description.schoolAndJob"
+                    defaultMessage="Need help in school or profession"
+                />
+            );
+        }
+
+        if (this.props.type === "motivation") {
+            return (
+                <FormattedMessage
+                    id="component.prayer.description.motivation"
+                    defaultMessage="Need for courage and passion"
+                />
+            );
+        }
+
         throw new Error(
             "Title for type " + this.props.type + " not supported!"
         );

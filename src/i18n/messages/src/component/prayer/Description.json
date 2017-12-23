@@ -26,5 +26,13 @@
   {
     "id": "component.prayer.description.time",
     "defaultMessage": "Need more time"
+  },
+  {
+    "id": "component.prayer.description.schoolAndJob",
+    "defaultMessage": "Need help in school or profession"
+  },
+  {
+    "id": "component.prayer.description.motivation",
+    "defaultMessage": "Need for courage and passion"
   }
 ]

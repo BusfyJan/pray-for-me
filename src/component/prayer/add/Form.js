@@ -15,7 +15,9 @@ const prayerTypes = [
     "money",
     "peace",
     "relationships",
-    "time"
+    "time",
+    "schoolAndJob",
+    "motivation"
 ];
 
 const CancelIconStyled = styled(CancelIcon)`
