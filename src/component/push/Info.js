@@ -17,7 +17,7 @@ class Info extends Component {
                 <Typography>
                     <FormattedMessage
                         id="component.push.info.notificationsManuallyDisabled"
-                        defaultMessage={`Notifications are manually disabled. You can enable them in browser settings`}
+                        defaultMessage="Notifications are manually disabled. You can enable them in browser settings"
                     />
                 </Typography>
             );
@@ -28,7 +28,7 @@ class Info extends Component {
                 <Typography>
                     <FormattedMessage
                         id="component.push.info.notificationsDisabled"
-                        defaultMessage={`Notifications are disabled. You can enable them by clicking the button`}
+                        defaultMessage="Notifications are disabled. You can enable them by clicking the button"
                     />
                     <br />
                     <br />
@@ -41,7 +41,7 @@ class Info extends Component {
                     >
                         <FormattedMessage
                             id="component.push.info.enableNotifications"
-                            defaultMessage={`Enable notifications`}
+                            defaultMessage="Enable notifications"
                         />
                     </ButtonStyled>
                 </Typography>
@@ -68,7 +68,7 @@ class Info extends Component {
                 <DialogTitle>
                     <FormattedMessage
                         id="component.push.info.title"
-                        defaultMessage={`Notifications settings`}
+                        defaultMessage="Notifications settings"
                     />
                 </DialogTitle>
                 <DialogContent>{this.getInfoText()}</DialogContent>

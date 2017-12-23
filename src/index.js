@@ -7,7 +7,7 @@ import { IntlProvider } from "react-intl";
 import { addLocaleData } from "react-intl";
 import en from "react-intl/locale-data/en";
 import sk from "react-intl/locale-data/sk";
-import localeData from "i18n/locales/data.json";
+import localeData from "i18n/locales/index.js";
 import reducer from "reducers/index.js";
 import { createStore } from "redux";
 import { Provider as ReduxProvider } from "react-redux";

@@ -27,6 +27,6 @@ mkdirpSync(outputDir);
 
 // Write the messages to this directory
 fs.writeFileSync(
-    outputDir + "data.json",
+    outputDir + "en.json",
     `{ "en": ${JSON.stringify(defaultMessages, null, 2)} }`
 );
