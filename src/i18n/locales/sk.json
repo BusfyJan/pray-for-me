@@ -45,6 +45,7 @@
             "Upozorniť pri novej prosbe",
         "component.push.notificationSettings.notifyWhenDeedWasAddedToMyPrayerRequest":
             "Upozorniť pri reakcii na moju prosbu",
+        "component.push.notificationSettings.save": "Uložiť",
         "container.prayerCreator.prayerAddedSuccessfully": "Prosba zdieľaná",
         "container.prayerCreator.prayerAddingFailed":
             "Prosbu sa nepodarilo zdieľať",

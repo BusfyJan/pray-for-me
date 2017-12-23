@@ -107,7 +107,10 @@ class NotificationSettings extends Component {
                             this.onSubmit();
                         }}
                     >
-                        Save &nbsp;
+                        <FormattedMessage
+                            id="component.push.notificationSettings.save"
+                            defaultMessage="Save"
+                        />&nbsp;
                         {this.state.isLoading ? (
                             <CircularProgress
                                 size={20}

@@ -32,6 +32,7 @@
   "component.push.info.title": "Notifications settings",
   "component.push.notificationSettings.notifyWhenNewPrayerRequestWasAdded": "Notify when new prayer request was added",
   "component.push.notificationSettings.notifyWhenDeedWasAddedToMyPrayerRequest": "Notify when new deed was added to my prayer request",
+  "component.push.notificationSettings.save": "Save",
   "container.prayerCreator.prayerAddedSuccessfully": "Prayer request was successfully created",
   "container.prayerCreator.prayerAddingFailed": "Prayer request creation failed",
   "container.prayerList.deedAddedSuccessfully": "Deed was successfully added to prayer",
