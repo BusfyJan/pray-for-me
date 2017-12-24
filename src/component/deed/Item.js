@@ -13,9 +13,17 @@ const BadgeStyled = styled(Badge)`
 class Item extends Component {
     render() {
         return (
-            <BadgeStyled badgeContent={this.props.count} color="primary">
-                <DeedIcon type={this.props.type} />
-            </BadgeStyled>
+            <span
+                onClick={() => {
+                    if (this.props.onClick) {
+                        this.props.onClick();
+                    }
+                }}
+            >
+                <BadgeStyled badgeContent={this.props.count} color="primary">
+                    <DeedIcon type={this.props.type} />
+                </BadgeStyled>
+            </span>
         );
     }
 }

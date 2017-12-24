@@ -1,6 +1,10 @@
 { "en": {
   "component.deed.add.form.title": "What deed have you done for this request?",
   "component.deed.add.form.cancel": "cancel",
+  "component.deed.info.textMass": "Mass was sacrificed {count}x for this request",
+  "component.deed.info.textGoodDeed": "Good deed was sacrificed {count}x for this request",
+  "component.deed.info.textPrayer": "Prayer was sacrificed {count}x for this request",
+  "component.deed.info.title": "Deeds for this prayer request",
   "component.deed.list.deedsTitleEmpty": "No deeds for this prayer yet",
   "component.deed.title.guidance": "Prayer",
   "component.deed.title.health": "Mass",

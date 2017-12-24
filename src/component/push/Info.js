@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
 import PushNotifications from "container/PushNotifications.js";
 import Typography from "material-ui/Typography";
+import Divider from "material-ui/Divider";
 
 const ButtonStyled = styled(Button)`
     float: right;
@@ -71,6 +72,7 @@ class Info extends Component {
                         defaultMessage="Notifications settings"
                     />
                 </DialogTitle>
+                <Divider />
                 <DialogContent>{this.getInfoText()}</DialogContent>
             </Dialog>
         );

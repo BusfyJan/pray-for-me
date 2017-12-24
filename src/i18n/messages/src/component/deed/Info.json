@@ -1,0 +1,18 @@
+[
+  {
+    "id": "component.deed.info.textMass",
+    "defaultMessage": "Mass was sacrificed {count}x for this request"
+  },
+  {
+    "id": "component.deed.info.textGoodDeed",
+    "defaultMessage": "Good deed was sacrificed {count}x for this request"
+  },
+  {
+    "id": "component.deed.info.textPrayer",
+    "defaultMessage": "Prayer was sacrificed {count}x for this request"
+  },
+  {
+    "id": "component.deed.info.title",
+    "defaultMessage": "Deeds for this prayer request"
+  }
+]
