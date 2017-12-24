@@ -8,7 +8,7 @@
             "Dobrý skutok bol na tento úmysel obetovaný {count}x",
         "component.deed.info.textPrayer":
             "Modlitba bola na tento úmysel obetovaná {count}x",
-        "component.deed.info.title": "Deeds for this prayer request",
+        "component.deed.info.title": "Obetované skutky pre túto prosbu",
         "component.deed.list.deedsTitleEmpty": "Čaká sa na pomoc",
         "component.deed.title.guidance": "Modlitba",
         "component.deed.title.health": "Svätá omša",
