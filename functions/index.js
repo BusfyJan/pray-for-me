@@ -56,7 +56,7 @@ exports.newDeedAdded = functions.database
                     })
                     .then(tokenData => {
                         if (
-                            !tokenData.notifyWhenDeedWasAddedToMyPrayerRequest
+                            !tokenData || !tokenData.notifyWhenDeedWasAddedToMyPrayerRequest
                         ) {
                             return;
                         }
