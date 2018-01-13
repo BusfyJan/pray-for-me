@@ -23,7 +23,7 @@
         "translate:cleanup": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/cleanup.js",
         "translate:extract": "NODE_ENV=production babel ./src >/dev/null",
         "translate:prepare": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/translator.js",
-        "deploy": "firebase deploy"
+        "deploy": "./node_modules/.bin/firebase deploy"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
@@ -32,6 +32,7 @@
         "babel-preset-react": "^6.24.1",
         "babel-preset-react-app": "^3.1.0",
         "babel-preset-stage-0": "^6.24.1",
+        "firebase-tools": "^3.16.0",
         "rmdir": "^1.2.0"
     }
 }
