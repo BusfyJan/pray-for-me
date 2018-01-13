@@ -23,7 +23,7 @@
         "translate:cleanup": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/cleanup.js",
         "translate:extract": "NODE_ENV=production babel ./src >/dev/null",
         "translate:prepare": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/translator.js",
-        "deploy": "./node_modules/.bin/firebase deploy"
+        "deploy": "npm run build && ./node_modules/.bin/firebase deploy --token \"1/vtTervVPfbnW_nH06v20Y-ZLyWjVxneXmpznNAVEkeM\""
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",

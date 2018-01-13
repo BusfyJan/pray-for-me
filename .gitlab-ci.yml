@@ -3,5 +3,4 @@ image: node:9.4.0
 deploy:
   script:
     - npm install
-    - npm run build
     - npm run deploy
