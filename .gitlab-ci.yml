@@ -1,0 +1,8 @@
+before_script:
+  - apt-get update -qq && apt-get install -y -qq nodejs
+
+deploy:
+  script:
+    - npm install
+    - npm run build
+    - npm run deploy
