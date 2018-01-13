@@ -4,4 +4,4 @@ deploy:
   script:
     - npm install
     - cd ./functions && npm install
-    - npm run deploy
+    - cd .. && npm run deploy
