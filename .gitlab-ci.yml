@@ -3,4 +3,5 @@ image: node:9.4.0
 deploy:
   script:
     - npm install
+    - cd ./functions && npm install
     - npm run deploy
