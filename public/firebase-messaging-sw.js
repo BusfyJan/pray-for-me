@@ -1,4 +1,4 @@
-importScripts("https://www.gstatic.com/firebasejs/4.6.2/firebase.js");
+importScripts("https://www.gstatic.com/firebasejs/4.13.0/firebase.js");
 
 firebase.initializeApp({
     apiKey: "AIzaSyAxLUFulfX7PhX1NuaVQtiKcVgZsEH8TDc",
