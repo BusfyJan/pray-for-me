@@ -15,15 +15,15 @@
         "styled-components": "^3.2.6"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "export REACT_APP_NODE_ENV=development && react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
+        "test": "export REACT_APP_NODE_ENV=development && react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
         "translate": "npm run translate:cleanup && npm run translate:extract && npm run translate:prepare",
         "translate:cleanup": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/cleanup.js",
         "translate:extract": "NODE_ENV=production babel ./src >/dev/null",
         "translate:prepare": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/translator.js",
-        "deploy_development": "NODE_ENV=development && npm run build && ./node_modules/.bin/firebase deploy -P development --token \"1/vtTervVPfbnW_nH06v20Y-ZLyWjVxneXmpznNAVEkeM\"",
+        "deploy_development": "export REACT_APP_NODE_ENV=development && npm run build && ./node_modules/.bin/firebase deploy -P development --token \"1/vtTervVPfbnW_nH06v20Y-ZLyWjVxneXmpznNAVEkeM\"",
         "deploy_production": "npm run build && ./node_modules/.bin/firebase deploy --token \"1/vtTervVPfbnW_nH06v20Y-ZLyWjVxneXmpznNAVEkeM\""
     },
     "devDependencies": {

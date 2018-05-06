@@ -1,7 +1,7 @@
 import firebase from "firebase";
 
 firebase.initializeApp(
-    process.env.NODE_ENV === 'development'
+    process.env.REACT_APP_NODE_ENV === 'development'
         ? {
             apiKey: "AIzaSyDmt-i31VhqsNoh1KccAiuTpuwDbnD7chQ",
             authDomain: "pray-for-me-dev.firebaseapp.com",
