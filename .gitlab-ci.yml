@@ -6,7 +6,6 @@ deploy_development:
     only:
         - development
     script:
-        - NODE_ENV=development
         - npm install
         - cd ./functions && npm install
         - cd .. && npm run deploy_development
@@ -17,7 +16,6 @@ deploy_production:
     only:
         - master
     script:
-        - NODE_ENV=production
         - npm install
         - cd ./functions && npm install
         - cd .. && npm run deploy_production
