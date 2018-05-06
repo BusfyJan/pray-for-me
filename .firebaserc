@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "pray-for-me-123"
+    "default": "pray-for-me-123",
+    "development": "pray-for-me-dev"
   }
 }

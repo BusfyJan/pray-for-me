@@ -9,7 +9,7 @@ deploy_development:
         - NODE_ENV=development
         - npm install
         - cd ./functions && npm install
-        - cd .. && npm run deploy
+        - cd .. && npm run deploy_development
         
 deploy_production:
     environment:
@@ -20,4 +20,4 @@ deploy_production:
         - NODE_ENV=production
         - npm install
         - cd ./functions && npm install
-        - cd .. && npm run deploy
+        - cd .. && npm run deploy_production
