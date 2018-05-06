@@ -1,7 +1,23 @@
 image: node:9.4.0
 
-deploy:
-  script:
-    - npm install
-    - cd ./functions && npm install
-    - cd .. && npm run deploy
+deploy_development:
+    environment:
+        name: development
+    only:
+        development
+    script:
+        - NODE_ENV=development
+        - npm install
+        - cd ./functions && npm install
+        - cd .. && npm run deploy
+        
+deploy_production:
+    environment:
+        name: production
+    only:
+        master
+    script:
+        - NODE_ENV=production
+        - npm install
+        - cd ./functions && npm install
+        - cd .. && npm run deploy
