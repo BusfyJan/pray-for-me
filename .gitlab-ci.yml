@@ -4,7 +4,7 @@ deploy_development:
     environment:
         name: development
     only:
-        development
+        - development
     script:
         - NODE_ENV=development
         - npm install
@@ -15,7 +15,7 @@ deploy_production:
     environment:
         name: production
     only:
-        master
+        - master
     script:
         - NODE_ENV=production
         - npm install
