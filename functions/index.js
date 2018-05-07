@@ -1,5 +1,6 @@
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
+const axios = require("axios");
 
 admin.initializeApp(functions.config().firebase);
 // Create and Deploy Your First Cloud Functions
@@ -71,3 +72,26 @@ exports.newDeedAdded = functions.database
                     });
             });
     });
+
+exports.bibleApiTest = functions.https.onRequest((request, response) => {
+    axios
+        .get(
+            "https://sk.bibles.org/v2/search.js?query=Mahershalalhashbaz",
+            {
+                auth: {
+                    username: 'VYOW9C8g3TjfTi1ddKXzSPJ3eZ9DOLGVKIuAaI7i',
+                    password: 'X'
+                }
+            }
+        )
+        .then(resp => {
+            response.set("Access-Control-Allow-Origin", "*");
+            response.set("Access-Control-Allow-Methods", "GET, POST");
+            response.status(200).send(resp.data.response);
+        })
+        .catch(err => {
+            response.set("Access-Control-Allow-Origin", "*");
+            response.set("Access-Control-Allow-Methods", "GET, POST");
+            response.status(400).send({error: err.message});
+        });
+});
