@@ -9,8 +9,8 @@ admin.initializeApp(functions.config().firebase);
 // uppercase version of the message to /messages/:pushId/uppercase
 exports.newPrayerAdded = functions.database
     .ref("/prayers/{prayerId}")
-    .onCreate(event => {
-        const prayerData = event.data.val();
+    .onCreate((snap, context) => {
+        const prayerData = snap.val();
         const userId = prayerData.userId;
         return admin
             .database()
@@ -37,10 +37,10 @@ exports.newPrayerAdded = functions.database
 
 exports.newDeedAdded = functions.database
     .ref("/prayers/{prayerId}/deeds/{deedId}")
-    .onCreate(event => {
+    .onCreate((snap, context) => {
         return admin
             .database()
-            .ref("prayers/" + event.params.prayerId)
+            .ref("prayers/" + context.params.prayerId)
             .once("value")
             .then(snapshot => {
                 const prayerData = snapshot.val();
