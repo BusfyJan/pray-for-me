@@ -1,4 +1,4 @@
-image: node:10.0-alpine
+image: node:9.11-alpine
 
 deploy_development:
     environment:
