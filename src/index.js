@@ -11,6 +11,12 @@ import localeData from "i18n/locales/index.js";
 import reducer from "reducers/index.js";
 import { createStore } from "redux";
 import { Provider as ReduxProvider } from "react-redux";
+import ReactGA from 'react-ga';
+
+if (process.env.REACT_APP_NODE_ENV === 'production') {
+    ReactGA.initialize('UA-119342760-1');
+    ReactGA.pageview("/");
+}
 
 const reduxStore = createStore(reducer);
 
@@ -39,4 +45,3 @@ ReactDOM.render(
     document.getElementById("root")
 );
 registerServiceWorker();
-console.log(process.env);
