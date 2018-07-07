@@ -11,7 +11,8 @@ import PrayerIcon from "component/prayer/Icon.js";
 import PrayerTitle from "component/prayer/Title.js";
 import PrayerDescription from "component/prayer/Description.js";
 import DeedsList from "component/deed/List.js";
-import { green } from "material-ui/colors";
+import { green, blue } from "material-ui/colors";
+import moment from "moment";
 
 const CardStyled = styled(Card)`
     margin-bottom: 25px;
@@ -29,6 +30,16 @@ const OwnRequestInfoWrapper = styled.span`
     padding: 3px 5px;
     margin-left: 5px;
     background: ${green[500]};
+    border-radius: 3px;
+    font-size: 0.75em;
+`;
+
+const TimestampInfoWrapper = styled.span`
+    font-weight: bold;
+    color: white;
+    padding: 3px 5px;
+    margin-left: 5px;
+    background: ${blue[500]};
     border-radius: 3px;
     font-size: 0.75em;
 `;
@@ -58,6 +69,13 @@ class Item extends Component {
                                     />
                                 </OwnRequestInfoWrapper>
                             ) : null}
+                            <TimestampInfoWrapper>
+                                {
+                                    moment(
+                                        -parseInt(this.props.data.timestamp, 10)
+                                    ).locale("sk").fromNow()
+                                }
+                            </TimestampInfoWrapper>
                         </span>
                     }
                     subheader={
