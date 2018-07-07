@@ -27,6 +27,14 @@ const language =
     navigator.language ||
     navigator.userLanguage;
 
+const i18nToMomentLocales = {
+    'en-US': 'en-gb',
+    'sk-SK': 'sk'
+};
+
+const momentLocale = i18nToMomentLocales[language] ? i18nToMomentLocales[language] : 'en';
+require(`moment/locale/${momentLocale}.js`);
+
 // Split locales with a region code
 const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
 

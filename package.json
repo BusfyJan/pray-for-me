@@ -6,14 +6,15 @@
         "firebase": "^4.13.1",
         "material-ui": "^1.0.0-beta.24",
         "material-ui-icons": "^1.0.0-beta.36",
+        "moment": "^2.22.2",
         "react": "^16.3.2",
         "react-dom": "^16.3.2",
-        "react-ga": "^2.5.2",
+        "react-ga": "^2.5.3",
         "react-intl": "^2.4.0",
         "react-redux": "^5.0.7",
         "react-scripts": "^1.1.4",
         "redux": "^4.0.0",
-        "styled-components": "^3.2.6"
+        "styled-components": "^3.3.3"
     },
     "scripts": {
         "start": "export REACT_APP_NODE_ENV=development && react-scripts start",
@@ -33,9 +34,9 @@
         "babel-plugin-react-intl": "^2.4.0",
         "babel-preset-es2015": "^6.24.1",
         "babel-preset-react": "^6.24.1",
-        "babel-preset-react-app": "^3.1.1",
+        "babel-preset-react-app": "^3.1.2",
         "babel-preset-stage-0": "^6.24.1",
-        "firebase-tools": "^3.18.4",
+        "firebase-tools": "^3.19.3",
         "rmdir": "^1.2.0"
     }
 }
