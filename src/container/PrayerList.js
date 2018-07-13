@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getId as getUserId } from "module/user.js";
+import { getId as getUserId } from "module/user/user.js";
 import { close as closePrayer } from "module/prayer.js";
 import { add as addDeed } from "module/deed.js";
 import { connect } from "react-redux";

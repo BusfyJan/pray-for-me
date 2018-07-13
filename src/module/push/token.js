@@ -1,5 +1,5 @@
 import firebase from "firebase";
-import { getId as getUserId } from "module/user.js";
+import { getId as getUserId } from "module/user/user.js";
 
 export const init = () => {
     monitorTokenRefresh();
