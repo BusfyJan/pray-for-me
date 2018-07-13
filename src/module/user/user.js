@@ -1,4 +1,5 @@
 import firebase from "firebase";
+import {init as initStatus} from 'module/user/status.js';
 
 export const init = async () => {
     let id = getId();
@@ -7,6 +8,8 @@ export const init = async () => {
         id = createNewId();
         saveId(id);
     }
+    
+    initStatus();
 };
 
 export const getId = () => {

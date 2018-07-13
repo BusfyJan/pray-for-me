@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Dashboard from "component/Dashboard.js";
 import FullCircularLoader from "component/loader/FullCircularLoader.js";
-import { init as initUser } from "module/user.js";
+import { init as initUser } from "module/user/user.js";
 
 class App extends Component {
     constructor() {
