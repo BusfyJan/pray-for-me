@@ -44,6 +44,16 @@ const TimestampInfoWrapper = styled.span`
     font-size: 0.75em;
 `;
 
+const UserStatusOnlineInfoWrapper = styled.span`
+    font-weight: bold;
+    color: white;
+    padding: 3px 5px;
+    margin-left: 5px;
+    background: ${green[500]};
+    border-radius: 3px;
+    font-size: 0.75em;
+`;
+
 class Item extends Component {
     constructor() {
         super();
@@ -76,6 +86,11 @@ class Item extends Component {
                                     ).locale("sk").fromNow()
                                 }
                             </TimestampInfoWrapper>
+                            {
+                                this.props.data.isUserOnline
+                                ? <UserStatusOnlineInfoWrapper>online</UserStatusOnlineInfoWrapper>
+                                : null
+                            }
                         </span>
                     }
                     subheader={

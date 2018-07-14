@@ -24,3 +24,24 @@ export const init = () => {
         });
     });
 };
+
+export const getOnlineUsers = () => {
+    return firebase
+        .database()
+        .ref("statuses")
+        .orderByChild("isOnline")
+        .equalTo(true)
+        .once("value")
+        .then(rowsSnapshot => {
+            if (!rowsSnapshot) {
+                return [];
+            }
+
+            const rows = [];
+            rowsSnapshot.forEach(rowSnapshot => {
+                rows.push(rowSnapshot.key);
+            });
+
+            return rows;
+        });
+};
