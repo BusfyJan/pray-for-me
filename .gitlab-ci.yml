@@ -1,6 +1,18 @@
 image: node:9.11-alpine
 
+stages:
+    - test
+    - deploy
+
+test:
+    stage: test
+    script:
+        - export CI=true
+        - npm install
+        - npm test
+
 deploy_development:
+    stage: deploy
     environment:
         name: development
     only:
@@ -11,6 +23,7 @@ deploy_development:
         - cd .. && npm run deploy_development
         
 deploy_production:
+    stage: deploy
     environment:
         name: production
     only:
