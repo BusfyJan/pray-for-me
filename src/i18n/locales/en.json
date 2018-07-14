@@ -21,6 +21,7 @@
   "component.prayer.description.schoolAndJob": "Need help in school or profession",
   "component.prayer.description.motivation": "Need for courage and passion",
   "component.prayer.item.yours": "yours",
+  "component.prayer.item.online": "online",
   "component.prayer.item.closePrayerRequest": "Close prayer request",
   "component.prayer.item.addDeedButton": "Add deed",
   "component.prayer.list.heading": "Prayer requests",

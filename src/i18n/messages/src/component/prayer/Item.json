@@ -4,6 +4,10 @@
     "defaultMessage": "yours"
   },
   {
+    "id": "component.prayer.item.online",
+    "defaultMessage": "online"
+  },
+  {
     "id": "component.prayer.item.closePrayerRequest",
     "defaultMessage": "Close prayer request"
   },

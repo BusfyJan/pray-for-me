@@ -32,7 +32,8 @@
             "Pomoc v škole alebo zamestnaní",
         "component.prayer.description.motivation":
             "Túžba po odvahe a odhodlaní",
-        "component.prayer.item.yours": "Moja prosba",
+        "component.prayer.item.yours": "moja prosba",
+        "component.prayer.item.online": "online",
         "component.prayer.item.closePrayerRequest": "Zatvoriť prosbu",
         "component.prayer.item.addDeedButton": "Chcem pomôcť",
         "component.prayer.list.heading": "Aktuálne prosby",

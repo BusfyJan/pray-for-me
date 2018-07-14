@@ -1,5 +1,6 @@
 import firebase from "firebase";
 import { getId as getUserId } from "module/user/user.js";
+import { getOnlineUsers } from "module/user/status.js";
 
 export const add = prayerType => {
     return firebase
@@ -75,6 +76,15 @@ export const getAll = () => {
                 }
 
                 return prayerData;
+            });
+        })
+        .then(prayers => {
+            return getOnlineUsers()
+            .then(onlineUsers => {
+                return prayers.map(prayer => {
+                    prayer.isUserOnline = onlineUsers.indexOf(prayer.userId) !== -1;
+                    return prayer;
+                });
             });
         });
 };
