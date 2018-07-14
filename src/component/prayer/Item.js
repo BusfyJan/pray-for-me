@@ -11,7 +11,7 @@ import PrayerIcon from "component/prayer/Icon.js";
 import PrayerTitle from "component/prayer/Title.js";
 import PrayerDescription from "component/prayer/Description.js";
 import DeedsList from "component/deed/List.js";
-import { green, blue } from "material-ui/colors";
+import { green, blue, orange } from "material-ui/colors";
 import moment from "moment";
 
 const CardStyled = styled(Card)`
@@ -29,7 +29,7 @@ const OwnRequestInfoWrapper = styled.span`
     color: white;
     padding: 3px 5px;
     margin-left: 5px;
-    background: ${green[500]};
+    background: ${orange[500]};
     border-radius: 3px;
     font-size: 0.75em;
 `;
@@ -71,14 +71,24 @@ class Item extends Component {
                     title={
                         <span>
                             <PrayerTitle type={this.props.data.type} />
-                            {this.props.data.isMine ? (
-                                <OwnRequestInfoWrapper>
+                            {
+                                this.props.data.isMine
+                                ? <OwnRequestInfoWrapper>
                                     <FormattedMessage
                                         id="component.prayer.item.yours"
                                         defaultMessage="yours"
                                     />
                                 </OwnRequestInfoWrapper>
-                            ) : null}
+                                : this.props.data.isUserOnline
+                                    ? <UserStatusOnlineInfoWrapper>
+                                        <FormattedMessage
+                                            id="component.prayer.item.online"
+                                            defaultMessage="online"
+                                        />
+                                    </UserStatusOnlineInfoWrapper>
+                                    : null
+                                
+                            }
                             <TimestampInfoWrapper>
                                 {
                                     moment(
@@ -86,11 +96,6 @@ class Item extends Component {
                                     ).locale("sk").fromNow()
                                 }
                             </TimestampInfoWrapper>
-                            {
-                                this.props.data.isUserOnline
-                                ? <UserStatusOnlineInfoWrapper>online</UserStatusOnlineInfoWrapper>
-                                : null
-                            }
                         </span>
                     }
                     subheader={
