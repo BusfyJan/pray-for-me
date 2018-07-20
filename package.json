@@ -26,8 +26,10 @@
         "translate:cleanup": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/cleanup.js",
         "translate:extract": "NODE_ENV=production babel ./src >/dev/null",
         "translate:prepare": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/translator.js",
-        "deploy_development": "export REACT_APP_NODE_ENV=development && npm run build && ./node_modules/.bin/firebase deploy -P development --token \"1/vtTervVPfbnW_nH06v20Y-ZLyWjVxneXmpznNAVEkeM\"",
-        "deploy_production": "export REACT_APP_NODE_ENV=production && npm run build && ./node_modules/.bin/firebase deploy -P default --token \"1/vtTervVPfbnW_nH06v20Y-ZLyWjVxneXmpznNAVEkeM\""
+        "deploy_development": "export REACT_APP_NODE_ENV=development && npm run build && ./node_modules/.bin/firebase deploy -P development --token \"1/vtTervVPfbnW_nH06v20Y-ZLyWjVxneXmpznNAVEkeM\" && npm run deploy_development:sentry",
+        "deploy_production": "export REACT_APP_NODE_ENV=production && npm run build && ./node_modules/.bin/firebase deploy -P default --token \"1/vtTervVPfbnW_nH06v20Y-ZLyWjVxneXmpznNAVEkeM\" && npm run deploy_production:sentry",
+        "deploy_development:sentry": "curl https://sentry.io/api/hooks/release/builtin/1247112/0eaad74d997425ed5e434016ac6cbbda2094503093119b56fd080cb43f91ad4a/ -X POST -H 'Content-Type: application/json' -d '{\"version\": \"${CI_COMMIT_SHA}\"}'",
+        "deploy_production:sentry": "curl https://sentry.io/api/hooks/release/builtin/1247108/ccea0c8db9dd4d0036c6b2c05018d15b51c9d04fd95e361e583de485a58b3d38/ -X POST -H 'Content-Type: application/json' -d '{\"version\": \"${CI_COMMIT_SHA}\"}'"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
