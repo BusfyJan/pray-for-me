@@ -19,8 +19,7 @@ deploy_development:
         - development
     script:
         - npm install
-        - cd ./functions && npm install
-        - cd .. && npm run deploy_development
+        - npm run deploy:development
         
 deploy_production:
     stage: deploy
@@ -30,5 +29,4 @@ deploy_production:
         - master
     script:
         - npm install
-        - cd ./functions && npm install
-        - cd .. && npm run deploy_production
+        - npm run deploy:production
