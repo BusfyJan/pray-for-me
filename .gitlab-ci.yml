@@ -8,7 +8,7 @@ test:
     stage: test
     script:
         - export CI=true
-        - npm install
+        - npm install --unsafe-perm
         - npm test
 
 deploy_development:
@@ -18,9 +18,9 @@ deploy_development:
     only:
         - development
     script:
-        - npm install
-        - cd ./functions && npm install
-        - cd .. && npm run deploy_development
+        - apk add --no-cache --update curl
+        - npm install --unsafe-perm
+        - npm run deploy:development
         
 deploy_production:
     stage: deploy
@@ -29,6 +29,6 @@ deploy_production:
     only:
         - master
     script:
-        - npm install
-        - cd ./functions && npm install
-        - cd .. && npm run deploy_production
+        - apk add --no-cache --update curl
+        - npm install --unsafe-perm
+        - npm run deploy:production
