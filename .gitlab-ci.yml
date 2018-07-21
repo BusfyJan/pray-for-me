@@ -18,7 +18,7 @@ deploy_development:
     only:
         - development
     script:
-        - apk add curl
+        - apk add --no-cache --update curl
         - npm install --unsafe-perm
         - npm run deploy:development
         
@@ -29,6 +29,6 @@ deploy_production:
     only:
         - master
     script:
-        - apk add curl
+        - apk add --no-cache --update curl
         - npm install --unsafe-perm
         - npm run deploy:production
