@@ -30,12 +30,13 @@ const language =
     navigator.language ||
     navigator.userLanguage;
 
+const defaultMomentLocale = 'en-gb';
 const i18nToMomentLocales = {
-    'en-US': 'en-gb',
+    'en-US': defaultMomentLocale,
     'sk-SK': 'sk'
 };
 
-const momentLocale = i18nToMomentLocales[language] ? i18nToMomentLocales[language] : 'en';
+const momentLocale = i18nToMomentLocales[language] ? i18nToMomentLocales[language] : defaultMomentLocale;
 require(`moment/locale/${momentLocale}.js`);
 
 // Split locales with a region code
