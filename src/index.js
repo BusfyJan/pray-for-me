@@ -16,10 +16,14 @@ import ReactGA from 'react-ga';
 if (process.env.REACT_APP_NODE_ENV === 'production') {
     ReactGA.initialize('UA-119342760-1');
     ReactGA.pageview("/");
-    window.Raven.config('https://ce679ec9cd394d458a066fb881804c02@sentry.io/1247108').install();
-} else {
-    window.Raven.config('https://acc74f50cd284e808e32ef3ff9863dbb@sentry.io/1247112').install();
 }
+
+window.Raven.config(
+    'https://ce679ec9cd394d458a066fb881804c02@sentry.io/1247108',
+    {
+        environment: process.env.REACT_APP_NODE_ENV
+    }
+).install();
 
 const reduxStore = createStore(reducer);
 
