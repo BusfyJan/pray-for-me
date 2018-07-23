@@ -1,55 +1,62 @@
-import React, { Component } from "react";
-import { ListItem, ListItemIcon, ListItemText } from "material-ui/List";
-import CircularProgress from "component/util/CircularProgress.js";
-import PrayerIcon from "component/prayer/Icon.js";
-import PrayerTitle from "component/prayer/Title.js";
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
+
+import CircularProgress from 'component/util/CircularProgress.js'
+import PrayerIcon from 'component/prayer/Icon.js'
+import PrayerTitle from 'component/prayer/Title.js'
 
 class FormItem extends Component {
-    constructor() {
-        super();
+  constructor() {
+    super()
 
-        this.state = {
-            isLoading: false
-        };
+    this.state = {
+      isLoading: false
+    }
+  }
+
+  onClick() {
+    if (this.props.disabled) {
+      return
     }
 
-    onClick() {
-        if (this.props.disabled) {
-            return;
-        }
+    this.setState({ isLoading: true })
+    this.props
+      .onClick()
+      .then(() => {
+        this.setState({ isLoading: false })
+      })
+      .catch(() => {
+        this.setState({ isLoading: false })
+      })
+  }
 
-        this.setState({ isLoading: true });
-        this.props
-            .onClick()
-            .then(() => {
-                this.setState({ isLoading: false });
-            })
-            .catch(() => {
-                this.setState({ isLoading: false });
-            });
-    }
-
-    render() {
-        return (
-            <ListItem
-                button
-                onClick={() => {
-                    this.onClick();
-                }}
-            >
-                <ListItemIcon>
-                    {this.state.isLoading ? (
-                        <CircularProgress size={24} thickness={7} />
-                    ) : (
-                        <PrayerIcon type={this.props.type} />
-                    )}
-                </ListItemIcon>
-                <ListItemText
-                    primary={<PrayerTitle type={this.props.type} />}
-                />
-            </ListItem>
-        );
-    }
+  render() {
+    const { type } = this.props
+    return (
+      <ListItem
+        button
+        onClick={() => {
+          this.onClick()
+        }}
+      >
+        <ListItemIcon>
+          {this.state.isLoading ? (
+            <CircularProgress size={24} thickness={7} />
+          ) : (
+            <PrayerIcon type={type} />
+          )}
+        </ListItemIcon>
+        <ListItemText primary={<PrayerTitle type={type} />} />
+      </ListItem>
+    )
+  }
 }
 
-export default FormItem;
+FormItem.propTypes = {
+  type: PropTypes.string.isRequired,
+  disabled: PropTypes.bool
+}
+
+export default FormItem
