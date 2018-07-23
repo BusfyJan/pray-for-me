@@ -11,7 +11,9 @@ import { red } from 'material-ui/colors'
 
 import Item from 'component/deed/add/FormItem'
 
-const deedTypes = ['prayer', 'mass', 'goodDeed']
+import deeds from 'constants/deedTypes.js'
+
+const deedTypes = [deeds.PRAYER, deeds.MASS, deeds.GOOD_DEED]
 
 const CancelIconStyled = styled(CancelIcon)`
   && {
@@ -21,12 +23,8 @@ const CancelIconStyled = styled(CancelIcon)`
 `
 
 class Form extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      isLoading: false
-    }
+  state = {
+    isLoading: false
   }
 
   onItemClick(deedType) {

@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import { FormattedMessage } from 'react-intl'
 import PropTypes from 'prop-types'
 
+import deeds from 'constants/deedTypes.js'
+
 class Title extends Component {
   render() {
     const { type } = this.props
-    if (type === 'prayer') {
+    if (type === deeds.PRAYER) {
       return (
         <FormattedMessage
           id="component.deed.title.guidance"
@@ -14,7 +16,7 @@ class Title extends Component {
       )
     }
 
-    if (type === 'mass') {
+    if (type === deeds.MASS) {
       return (
         <FormattedMessage
           id="component.deed.title.health"
@@ -23,7 +25,7 @@ class Title extends Component {
       )
     }
 
-    if (type === 'goodDeed') {
+    if (type === deeds.GOOD_DEED) {
       return (
         <FormattedMessage
           id="component.deed.title.goodDeed"

@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import { FormattedMessage } from 'react-intl'
 import PropTypes from 'prop-types'
 
+import prayers from 'constants/prayerTypes.js'
+
 class Title extends Component {
   render() {
     const { type } = this.props
-    if (type === 'guidance') {
+    if (type === prayers.GUIDANCE) {
       return (
         <FormattedMessage
           id="component.prayer.title.guidance"
@@ -14,7 +16,7 @@ class Title extends Component {
       )
     }
 
-    if (type === 'health') {
+    if (type === prayers.HEALTH) {
       return (
         <FormattedMessage
           id="component.prayer.title.health"
@@ -23,7 +25,7 @@ class Title extends Component {
       )
     }
 
-    if (type === 'joy') {
+    if (type === prayers.JOY) {
       return (
         <FormattedMessage
           id="component.prayer.title.joy"
@@ -32,7 +34,7 @@ class Title extends Component {
       )
     }
 
-    if (type === 'money') {
+    if (type === prayers.MONEY) {
       return (
         <FormattedMessage
           id="component.prayer.title.money"
@@ -41,7 +43,7 @@ class Title extends Component {
       )
     }
 
-    if (type === 'peace') {
+    if (type === prayers.PEACE) {
       return (
         <FormattedMessage
           id="component.prayer.title.peace"
@@ -50,7 +52,7 @@ class Title extends Component {
       )
     }
 
-    if (type === 'relationships') {
+    if (type === prayers.RELATIONSHIPS) {
       return (
         <FormattedMessage
           id="component.prayer.title.relationships"
@@ -59,7 +61,7 @@ class Title extends Component {
       )
     }
 
-    if (type === 'time') {
+    if (type === prayers.TIME) {
       return (
         <FormattedMessage
           id="component.prayer.title.time"
@@ -68,7 +70,7 @@ class Title extends Component {
       )
     }
 
-    if (type === 'schoolAndJob') {
+    if (type === prayers.SCHOOL_AND_JOB) {
       return (
         <FormattedMessage
           id="component.prayer.title.schoolAndJob"
@@ -77,7 +79,7 @@ class Title extends Component {
       )
     }
 
-    if (type === 'motivation') {
+    if (type === prayers.MOTIVATION) {
       return (
         <FormattedMessage
           id="component.prayer.title.motivation"

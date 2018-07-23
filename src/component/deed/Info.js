@@ -10,13 +10,15 @@ import Divider from 'material-ui/Divider'
 
 import Item from 'component/deed/Item.js'
 
+import deeds from 'constants/deedTypes.js'
+
 const ListItemStyled = styled(ListItem)`
   margin-top: 10px;
 `
 
 class Info extends Component {
   getInfoText(deedType, count) {
-    if (deedType === 'mass') {
+    if (deedType === deeds.MASS) {
       return (
         <FormattedMessage
           id="component.deed.info.textMass"
@@ -26,7 +28,7 @@ class Info extends Component {
       )
     }
 
-    if (deedType === 'goodDeed') {
+    if (deedType === deeds.GOOD_DEED) {
       return (
         <FormattedMessage
           id="component.deed.info.textGoodDeed"
@@ -36,7 +38,7 @@ class Info extends Component {
       )
     }
 
-    if (deedType === 'prayer') {
+    if (deedType === deeds.PRAYER) {
       return (
         <FormattedMessage
           id="component.deed.info.textPrayer"

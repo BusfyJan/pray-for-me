@@ -58,12 +58,8 @@ const UserStatusOnlineInfoWrapper = styled.span`
 `
 
 class Item extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      isClosing: false
-    }
+  state = {
+    isClosing: false
   }
 
   render() {

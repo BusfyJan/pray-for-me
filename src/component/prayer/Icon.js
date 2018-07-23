@@ -21,53 +21,55 @@ import {
   pink
 } from 'material-ui/colors'
 
+import prayers from 'constants/prayerTypes.js'
+
 class Icon extends Component {
   render() {
     const { type } = this.props
     let Icon = null
     let color = null
 
-    if (type === 'guidance') {
+    if (type === prayers.GUIDANCE) {
       Icon = GuidanceIcon
       color = blue[500]
     }
 
-    if (type === 'health') {
+    if (type === prayers.HEALTH) {
       Icon = HealthIcon
       color = pink[500]
     }
 
-    if (type === 'joy') {
+    if (type === prayers.JOY) {
       Icon = JoyIcon
       color = yellow[500]
     }
 
-    if (type === 'money') {
+    if (type === prayers.MONEY) {
       Icon = MoneyIcon
       color = green[500]
     }
 
-    if (type === 'peace') {
+    if (type === prayers.PEACE) {
       Icon = PeaceIcon
       color = deepPurple[500]
     }
 
-    if (type === 'relationships') {
+    if (type === prayers.RELATIONSHIPS) {
       Icon = RelationshipsIcon
       color = red[500]
     }
 
-    if (type === 'time') {
+    if (type === prayers.TIME) {
       Icon = TimeIcon
       color = orange[500]
     }
 
-    if (type === 'schoolAndJob') {
+    if (type === prayers.SCHOOL_AND_JOB) {
       Icon = SchoolAndJobIcon
       color = blue[500]
     }
 
-    if (type === 'motivation') {
+    if (type === prayers.MOTIVATION) {
       Icon = MotivationIcon
       color = deepPurple[500]
     }
