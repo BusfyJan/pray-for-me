@@ -1,24 +1,30 @@
-import React, { Component } from "react";
-import { CircularProgress as MaterialCircularProgress } from "material-ui/Progress";
-import styled from "styled-components";
-import { blue } from "material-ui/colors";
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+
+import { CircularProgress as MaterialCircularProgress } from 'material-ui/Progress'
+import { blue } from 'material-ui/colors'
 
 class CircularProgress extends Component {
-    render() {
-        const MaterialCircularProgressStyled = styled(MaterialCircularProgress)`
-            margin-right: 0px;
-            color: ${this.props.color
-                ? this.props.color
-                : blue[800]} !important;
-        `;
+  render() {
+    const { color, size, thickness } = this.props
 
-        return (
-            <MaterialCircularProgressStyled
-                size={this.props.size}
-                thickness={this.props.thickness}
-            />
-        );
-    }
+    const MaterialCircularProgressStyled = styled(MaterialCircularProgress)`
+      margin-right: 0px;
+      color: ${color ? color : blue[800]} !important;
+    `
+
+    return <MaterialCircularProgressStyled size={size} thickness={thickness} />
+  }
 }
 
-export default CircularProgress;
+CircularProgress.propTypes = {
+  color: PropTypes.string,
+  size: PropTypes.number.isRequired,
+  thickness: PropTypes.number.isRequired
+}
+
+CircularProgress.defaultProps = {
+  color: blue[800]
+}
+export default CircularProgress

@@ -1,100 +1,96 @@
-import React, { Component } from "react";
-import Drawer from "material-ui/Drawer";
-import Divider from "material-ui/Divider";
-import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List";
-import { FormattedMessage } from "react-intl";
-import CancelIcon from "material-ui-icons/Cancel";
-import Item from "component/deed/add/FormItem";
-import styled from "styled-components";
-import { red } from "material-ui/colors";
+import React, { Component } from 'react'
+import { FormattedMessage } from 'react-intl'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
-const deedTypes = ["prayer", "mass", "goodDeed"];
+import Drawer from 'material-ui/Drawer'
+import Divider from 'material-ui/Divider'
+import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
+import CancelIcon from 'material-ui-icons/Cancel'
+import { red } from 'material-ui/colors'
+
+import Item from 'component/deed/add/FormItem'
+
+import deeds from 'constants/deedTypes.js'
+
+const deedTypes = [deeds.PRAYER, deeds.MASS, deeds.GOOD_DEED]
 
 const CancelIconStyled = styled(CancelIcon)`
-    && {
-        color: ${red[500]};
-        margin-right: 0px;
-    }
-`;
+  && {
+    color: ${red[500]};
+    margin-right: 0px;
+  }
+`
 
 class Form extends Component {
-    constructor() {
-        super();
+  state = {
+    isLoading: false
+  }
 
-        this.state = {
-            isLoading: false
-        };
-    }
+  onItemClick(deedType) {
+    this.setState({ isLoading: true })
+    return this.props.onSubmit(deedType).then(() => {
+      this.setState({
+        isLoading: false
+      }).catch(() => {
+        this.setState({
+          isLoading: true
+        })
+      })
+    })
+  }
 
-    onItemClick(deedType) {
-        this.setState({ isLoading: true });
-        return this.props.onSubmit(deedType).then(() => {
-            this.setState({
-                isLoading: false
-            }).catch(() => {
-                this.setState({
-                    isLoading: true
-                });
-            });
-        });
-    }
-
-    render() {
-        return (
-            <Drawer
-                anchor="bottom"
-                open={this.props.isOpen}
-                onClose={() => {
-                    this.props.onCancel();
+  render() {
+    const { isOpen, onCancel } = this.props
+    return (
+      <Drawer anchor="bottom" open={isOpen} onClose={onCancel}>
+        <List>
+          <ListItem>
+            <ListItemText
+              primary={
+                <FormattedMessage
+                  id="component.deed.add.form.title"
+                  defaultMessage="What deed have you done for this request?"
+                />
+              }
+            />
+          </ListItem>
+          <Divider />
+          {deedTypes.map(deedType => {
+            return (
+              <Item
+                key={deedType}
+                type={deedType}
+                disabled={this.state.isLoading}
+                onClick={() => {
+                  return this.onItemClick(deedType)
                 }}
-            >
-                <List>
-                    <ListItem>
-                        <ListItemText
-                            primary={
-                                <FormattedMessage
-                                    id="component.deed.add.form.title"
-                                    defaultMessage="What deed have you done for this request?"
-                                />
-                            }
-                        />
-                    </ListItem>
-                    <Divider />
-                    {deedTypes.map(deedType => {
-                        return (
-                            <Item
-                                key={deedType}
-                                type={deedType}
-                                disabled={this.state.isLoading}
-                                onClick={() => {
-                                    return this.onItemClick(deedType);
-                                }}
-                            />
-                        );
-                    })}
-                    <Divider />
-                    <ListItem
-                        button
-                        onClick={() => {
-                            this.props.onCancel();
-                        }}
-                    >
-                        <ListItemIcon>
-                            <CancelIconStyled />
-                        </ListItemIcon>
-                        <ListItemText
-                            primary={
-                                <FormattedMessage
-                                    id="component.deed.add.form.cancel"
-                                    defaultMessage="cancel"
-                                />
-                            }
-                        />
-                    </ListItem>
-                </List>
-            </Drawer>
-        );
-    }
+              />
+            )
+          })}
+          <Divider />
+          <ListItem button onClick={onCancel}>
+            <ListItemIcon>
+              <CancelIconStyled />
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <FormattedMessage
+                  id="component.deed.add.form.cancel"
+                  defaultMessage="cancel"
+                />
+              }
+            />
+          </ListItem>
+        </List>
+      </Drawer>
+    )
+  }
 }
 
-export default Form;
+Form.propTypes = {
+  onCancel: PropTypes.func,
+  isOpen: PropTypes.bool.isRequired
+}
+
+export default Form

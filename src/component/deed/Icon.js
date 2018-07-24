@@ -1,40 +1,49 @@
-import React, { Component } from "react";
-import MassIcon from "material-ui-icons/Home";
-import PrayerIcon from "material-ui-icons/RecordVoiceOver";
-import GoodDeedIcon from "material-ui-icons/FormatPaint";
-import { green, blue, red } from "material-ui/colors";
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+
+import MassIcon from 'material-ui-icons/Home'
+import PrayerIcon from 'material-ui-icons/RecordVoiceOver'
+import GoodDeedIcon from 'material-ui-icons/FormatPaint'
+import { green, blue, red } from 'material-ui/colors'
+
+import deeds from 'constants/deedTypes.js'
 
 class Icon extends Component {
-    render() {
-        let Icon = null;
-        let color = null;
+  render() {
+    const { type } = this.props
+    let Icon = null
+    let color = null
 
-        if (this.props.type === "prayer") {
-            Icon = PrayerIcon;
-            color = red[500];
-        }
-
-        if (this.props.type === "mass") {
-            Icon = MassIcon;
-            color = blue[500];
-        }
-
-        if (this.props.type === "goodDeed") {
-            Icon = GoodDeedIcon;
-            color = green[500];
-        }
-
-        if (Icon === null) {
-            throw new Error("Icon type " + this.props.type + " not supported!");
-        }
-
-        Icon = styled(Icon)`
-            color: ${color};
-        `;
-
-        return <Icon />;
+    if (type === deeds.PRAYER) {
+      Icon = PrayerIcon
+      color = red[500]
     }
+
+    if (type === deeds.MASS) {
+      Icon = MassIcon
+      color = blue[500]
+    }
+
+    if (type === deeds.GOOD_DEED) {
+      Icon = GoodDeedIcon
+      color = green[500]
+    }
+
+    if (Icon === null) {
+      throw new Error('Icon type ' + type + ' not supported!')
+    }
+
+    Icon = styled(Icon)`
+      color: ${color};
+    `
+
+    return <Icon />
+  }
 }
 
-export default Icon;
+Icon.propTypes = {
+  type: PropTypes.string.isRequired
+}
+
+export default Icon
