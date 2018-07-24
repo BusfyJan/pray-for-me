@@ -18,7 +18,6 @@ if (process.env.REACT_APP_NODE_ENV === 'production') {
   ReactGA.pageview('/')
 }
 
-
 if (process.env.NODE_ENV !== "development") {
     window.Raven.config(
       'https://ce679ec9cd394d458a066fb881804c02@sentry.io/1247108',
