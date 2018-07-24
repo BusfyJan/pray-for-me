@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 
 import Menu from 'material-ui/Menu'
 import MenuItem from 'material-ui/Menu/MenuItem'
 import SettingsIcon from 'material-ui-icons/Settings'
+import CloseIcon from 'material-ui-icons/Close'
 import MaterialButton from 'material-ui/Button'
 import { blue } from 'material-ui/colors'
 
@@ -24,7 +25,6 @@ const ButtonWrapper = styled(MaterialButton)`
 const StyledMenuItem = styled(MenuItem)`
   && {
     background: white !important;
-
     &:hover {
       background: white;
     }
@@ -47,9 +47,9 @@ class MenuWrapper extends Component {
     const { anchorEl } = this.state
     const { items } = this.props
     return (
-      <div>
+      <Fragment>
         <ButtonWrapper fab mini color="primary" onClick={this.handleClick}>
-          <SettingsIcon />
+          {anchorEl ? <CloseIcon /> : <SettingsIcon />}
         </ButtonWrapper>
         <Menu
           anchorEl={anchorEl}
@@ -70,7 +70,7 @@ class MenuWrapper extends Component {
             )
           })}
         </Menu>
-      </div>
+      </Fragment>
     )
   }
 }
