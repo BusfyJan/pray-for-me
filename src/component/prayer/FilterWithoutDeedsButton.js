@@ -8,12 +8,7 @@ import { blue } from 'material-ui/colors'
 
 const MaterialButtonStyled = styled(MaterialButton)`
   && {
-    position: fixed !important;
-    right: 7px;
-    top: 100px;
-    z-index: 2;
     background: ${blue[800]};
-
     &:hover {
       background: ${blue[700]};
     }

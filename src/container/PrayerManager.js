@@ -9,6 +9,7 @@ import { FormattedMessage } from 'react-intl'
 import RefreshButton from 'component/prayer/RefreshButton.js'
 import FilterMineButton from 'component/prayer/FilterMineButton.js'
 import FilterWithoutDeedsButton from 'component/prayer/FilterWithoutDeedsButton.js'
+import MenuWrapper from 'component/util/MenuWrapper.js'
 
 class PrayerManager extends Component {
   constructor() {
@@ -124,23 +125,25 @@ class PrayerManager extends Component {
 
   render() {
     return (
-      <div>
-        <FilterMineButton
-          active={this.props.onlyMine}
-          onClick={this.handleChangeFilter}
-        />
-        <RefreshButton
-          active={this.state.isRefreshing}
-          onClick={() => {
-            this.wasRefreshInitiatedByUser = true
-            this.props.dispatch(prayerActions.addRefreshRequest())
-          }}
-        />
-        <FilterWithoutDeedsButton
-          active={this.props.withoutDeeds}
-          onClick={this.handleSetOnlyWithoutDeeds}
-        />
-      </div>
+      <MenuWrapper
+        items={[
+          <RefreshButton
+            active={this.state.isRefreshing}
+            onClick={() => {
+              this.wasRefreshInitiatedByUser = true
+              this.props.dispatch(prayerActions.addRefreshRequest())
+            }}
+          />,
+          <FilterMineButton
+            active={this.props.onlyMine}
+            onClick={this.handleChangeFilter}
+          />,
+          <FilterWithoutDeedsButton
+            active={this.props.withoutDeeds}
+            onClick={this.handleSetOnlyWithoutDeeds}
+          />
+        ]}
+      />
     )
   }
 }
