@@ -31,12 +31,8 @@ const NoItemsTextWrapper = styled.div`
 `
 
 class List extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      infoOpen: false
-    }
+  state = {
+    infoOpen: false
   }
 
   groupItemsByDeedType() {

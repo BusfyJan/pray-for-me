@@ -11,16 +11,18 @@ import { red } from 'material-ui/colors'
 
 import Item from 'component/prayer/add/FormItem.js'
 
+import prayers from 'constants/prayerTypes.js'
+
 const prayerTypes = [
-  'guidance',
-  'health',
-  'joy',
-  'money',
-  'peace',
-  'relationships',
-  'time',
-  'schoolAndJob',
-  'motivation'
+  prayers.GUIDANCE,
+  prayers.HEALTH,
+  prayers.JOY,
+  prayers.MONEY,
+  prayers.PEACE,
+  prayers.RELATIONSHIPS,
+  prayers.TIME,
+  prayers.SCHOOL_AND_JOB,
+  prayers.MOTIVATION
 ]
 
 const CancelIconStyled = styled(CancelIcon)`
@@ -31,12 +33,8 @@ const CancelIconStyled = styled(CancelIcon)`
 `
 
 class Form extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      isLoading: false
-    }
+  state = {
+    isLoading: false
   }
 
   onItemClick(prayerType) {

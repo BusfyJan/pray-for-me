@@ -8,12 +8,8 @@ import PrayerIcon from 'component/prayer/Icon.js'
 import PrayerTitle from 'component/prayer/Title.js'
 
 class FormItem extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      isLoading: false
-    }
+  state = {
+    isLoading: false
   }
 
   onClick() {

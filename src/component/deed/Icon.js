@@ -7,23 +7,25 @@ import PrayerIcon from 'material-ui-icons/RecordVoiceOver'
 import GoodDeedIcon from 'material-ui-icons/FormatPaint'
 import { green, blue, red } from 'material-ui/colors'
 
+import deeds from 'constants/deedTypes.js'
+
 class Icon extends Component {
   render() {
     const { type } = this.props
     let Icon = null
     let color = null
 
-    if (type === 'prayer') {
+    if (type === deeds.PRAYER) {
       Icon = PrayerIcon
       color = red[500]
     }
 
-    if (type === 'mass') {
+    if (type === deeds.MASS) {
       Icon = MassIcon
       color = blue[500]
     }
 
-    if (type === 'goodDeed') {
+    if (type === deeds.GOOD_DEED) {
       Icon = GoodDeedIcon
       color = green[500]
     }

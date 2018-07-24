@@ -7,12 +7,8 @@ import DeedIcon from 'component/deed/Icon.js'
 import DeedTitle from 'component/deed/Title.js'
 
 class FormItem extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      isLoading: false
-    }
+  state = {
+    isLoading: false
   }
 
   onClick() {
