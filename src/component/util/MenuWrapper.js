@@ -31,6 +31,16 @@ const StyledMenuItem = styled(MenuItem)`
   }
 `
 
+const StyledText = styled.span`
+  font-size: 0.95em;
+  font-weight: bold;
+  padding-top: 5px;
+`
+
+const SwitchWrapper = styled.div`
+  text-align: right;
+  width: 100%;
+`
 class MenuWrapper extends Component {
   state = {
     anchorEl: null
@@ -58,14 +68,15 @@ class MenuWrapper extends Component {
           PaperProps={{
             style: {
               marginTop: '40px',
-              borderRadius: '40px'
+              borderRadius: '10px'
             }
           }}
         >
           {items.map((item, index) => {
             return (
-              <StyledMenuItem key={index} onClick={this.handleClose}>
-                {item}
+              <StyledMenuItem key={index}>
+                <StyledText>{item.text}</StyledText>
+                <SwitchWrapper>{item.children}</SwitchWrapper>
               </StyledMenuItem>
             )
           })}

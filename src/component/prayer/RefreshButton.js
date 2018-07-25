@@ -10,6 +10,10 @@ import Rotating from 'component/util/Rotating.js'
 
 const MaterialButtonStyled = styled(MaterialButton)`
   && {
+    position: fixed !important;
+    right: 10px;
+    top: 60px;
+    z-index: 2;
     background: ${green[400]};
 
     &:hover {

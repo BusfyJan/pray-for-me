@@ -85,6 +85,8 @@
     "container.pushSettings.initTokenFailed":
       "Upozornenia sa nepodarilo nastaviť",
     "container.pushNotifications.enablingSucceeded": "Upozornenia zapnuté",
-    "container.pushNotifications.enablingFailed": " Upozornenia vypnuté"
+    "container.pushNotifications.enablingFailed": " Upozornenia vypnuté",
+    "container.prayerManager.myDeeds": "Moje prosby",
+    "container.prayerManager.emptyDeeds": "Bez prosieb"
   }
 }
