@@ -1,5 +1,17 @@
 [
   {
+    "id": "container.prayerRefresher.onlyMineTurnedOn",
+    "defaultMessage": "Displaying only your prayer requests"
+  },
+  {
+    "id": "container.prayerRefresher.onlyMineTurnedOff",
+    "defaultMessage": "Displaying all prayer requests"
+  },
+  {
+    "id": "container.prayerRefresher.onlyWithoutDeedsOn",
+    "defaultMessage": "Displaying only prayers without deeds"
+  },
+  {
     "id": "container.prayerRefresher.listRefreshed",
     "defaultMessage": "Prayer requests were refreshed"
   },
@@ -8,11 +20,11 @@
     "defaultMessage": "Failed to retrieve prayers"
   },
   {
-    "id": "container.prayerRefresher.onlyMineTurnedOn",
-    "defaultMessage": "Displaying only your prayer requests"
+    "id": "container.prayerManager.myDeeds",
+    "defaultMessage": "My deeds"
   },
   {
-    "id": "container.prayerRefresher.onlyMineTurnedOff",
-    "defaultMessage": "Displaying all prayer requests"
+    "id": "container.prayerManager.emptyDeeds",
+    "defaultMessage": "Empty deeds"
   }
 ]

@@ -11,8 +11,8 @@ import Rotating from 'component/util/Rotating.js'
 const MaterialButtonStyled = styled(MaterialButton)`
   && {
     position: fixed !important;
-    right: 7px;
-    top: 7px;
+    right: 10px;
+    top: 60px;
     z-index: 2;
     background: ${green[400]};
 
