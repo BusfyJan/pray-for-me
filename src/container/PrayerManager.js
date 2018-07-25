@@ -7,9 +7,8 @@ import {
 import { getAll as getAllPrayers } from 'module/prayer.js'
 import { FormattedMessage } from 'react-intl'
 import RefreshButton from 'component/prayer/RefreshButton.js'
-import FilterMineButton from 'component/prayer/FilterMineButton.js'
-import FilterWithoutDeedsButton from 'component/prayer/FilterWithoutDeedsButton.js'
 import MenuWrapper from 'component/util/MenuWrapper.js'
+import Select from 'component/util/Select.js'
 
 class PrayerManager extends Component {
   constructor() {
@@ -125,25 +124,47 @@ class PrayerManager extends Component {
 
   render() {
     return (
-      <MenuWrapper
-        items={[
-          <RefreshButton
-            active={this.state.isRefreshing}
-            onClick={() => {
-              this.wasRefreshInitiatedByUser = true
-              this.props.dispatch(prayerActions.addRefreshRequest())
-            }}
-          />,
-          <FilterMineButton
-            active={this.props.onlyMine}
-            onClick={this.handleChangeFilter}
-          />,
-          <FilterWithoutDeedsButton
-            active={this.props.withoutDeeds}
-            onClick={this.handleSetOnlyWithoutDeeds}
-          />
-        ]}
-      />
+      <React.Fragment>
+        <MenuWrapper
+          items={[
+            {
+              text: (
+                <FormattedMessage
+                  id="container.prayerManager.myDeeds"
+                  defaultMessage="My deeds"
+                />
+              ),
+              children: (
+                <Select
+                  isChecked={this.props.onlyMine}
+                  switchClicked={this.handleChangeFilter}
+                />
+              )
+            },
+            {
+              text: (
+                <FormattedMessage
+                  id="container.prayerManager.emptyDeeds"
+                  defaultMessage="Empty deeds"
+                />
+              ),
+              children: (
+                <Select
+                  isChecked={this.props.withoutDeeds}
+                  switchClicked={this.handleSetOnlyWithoutDeeds}
+                />
+              )
+            }
+          ]}
+        />
+        <RefreshButton
+          active={this.state.isRefreshing}
+          onClick={() => {
+            this.wasRefreshInitiatedByUser = true
+            this.props.dispatch(prayerActions.addRefreshRequest())
+          }}
+        />
+      </React.Fragment>
     )
   }
 }

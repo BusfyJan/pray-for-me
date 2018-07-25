@@ -12,15 +12,19 @@
     "defaultMessage": "Displaying only prayers without deeds"
   },
   {
-    "id": "container.prayerRefresher.onlyWithoutDeedsOff",
-    "defaultMessage": "Displaying all prayer requests"
-  },
-  {
     "id": "container.prayerRefresher.listRefreshed",
     "defaultMessage": "Prayer requests were refreshed"
   },
   {
     "id": "container.prayerRefresher.failedToRetrievePrayers",
     "defaultMessage": "Failed to retrieve prayers"
+  },
+  {
+    "id": "container.prayerManager.myDeeds",
+    "defaultMessage": "My deeds"
+  },
+  {
+    "id": "container.prayerManager.emptyDeeds",
+    "defaultMessage": "Empty deeds"
   }
 ]
