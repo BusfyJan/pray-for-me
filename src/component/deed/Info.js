@@ -51,7 +51,6 @@ class Info extends Component {
 
   render() {
     const { isVisible, onRequestClose, data } = this.props
-    console.log(data)
     return (
       <Dialog open={isVisible} onClose={onRequestClose}>
         <DialogTitle>
