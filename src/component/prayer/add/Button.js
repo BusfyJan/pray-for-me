@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -12,21 +12,11 @@ const MaterialButtonStyled = styled(MaterialButton)`
   z-index: 2;
 `
 
-class Button extends Component {
-  render() {
-    return (
-      <MaterialButtonStyled
-        onClick={() => {
-          this.props.onClick()
-        }}
-        fab
-        color="primary"
-      >
-        <IconAdd />
-      </MaterialButtonStyled>
-    )
-  }
-}
+const Button = ({ onClick }) => (
+  <MaterialButtonStyled onClick={onClick} fab color="primary">
+    <IconAdd />
+  </MaterialButtonStyled>
+)
 
 Button.propTypes = {
   onClick: PropTypes.func

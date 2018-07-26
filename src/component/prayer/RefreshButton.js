@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -22,31 +22,26 @@ const MaterialButtonStyled = styled(MaterialButton)`
   }
 `
 
-class RefreshButton extends Component {
-  render() {
-    const { active, onClick } = this.props
-    return (
-      <MaterialButtonStyled
-        onClick={() => {
-          if (!active) {
-            onClick()
-          }
-        }}
-        fab
-        mini
-        color="primary"
-      >
-        {active ? (
-          <Rotating>
-            <IconRefresh />
-          </Rotating>
-        ) : (
-          <IconRefresh />
-        )}
-      </MaterialButtonStyled>
-    )
-  }
-}
+const RefreshButton = ({ active, onClick }) => (
+  <MaterialButtonStyled
+    onClick={() => {
+      if (!active) {
+        onClick()
+      }
+    }}
+    fab
+    mini
+    color="primary"
+  >
+    {active ? (
+      <Rotating>
+        <IconRefresh />
+      </Rotating>
+    ) : (
+      <IconRefresh />
+    )}
+  </MaterialButtonStyled>
+)
 
 RefreshButton.propTypes = {
   active: PropTypes.bool.isRequired,
