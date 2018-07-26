@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { getId as getUserId } from 'module/user/user.js'
 import { close as closePrayer } from 'module/prayer.js'
 import { add as addDeed } from 'module/deed.js'
@@ -12,12 +12,8 @@ import List from 'component/prayer/List.js'
 import ResponseForm from 'component/deed/add/Form.js'
 
 class PrayerList extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      prayerIdToResponseTo: null
-    }
+  state = {
+    prayerIdToResponseTo: null
   }
 
   componentWillMount() {
@@ -79,7 +75,7 @@ class PrayerList extends Component {
   render() {
     const userId = getUserId()
     return (
-      <div>
+      <Fragment>
         <List
           items={this.props.prayers
             .map(prayer => {
@@ -115,7 +111,7 @@ class PrayerList extends Component {
             return this.onAddFormSubmit(deedType)
           }}
         />
-      </div>
+      </Fragment>
     )
   }
 }

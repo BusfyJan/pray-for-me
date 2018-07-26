@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import MaterialButton from 'material-ui/Button'
@@ -16,17 +16,11 @@ const MaterialButtonStyled = styled(MaterialButton)`
   }
 `
 
-class FilterMineButton extends Component {
-  render() {
-    const { onClick, active } = this.props
-
-    return (
-      <MaterialButtonStyled onClick={onClick} fab mini color="primary">
-        {active ? <IconActive /> : <IconInactive />}
-      </MaterialButtonStyled>
-    )
-  }
-}
+const FilterMineButton = ({ onClick, active }) => (
+  <MaterialButtonStyled onClick={onClick} fab mini color="primary">
+    {active ? <IconActive /> : <IconInactive />}
+  </MaterialButtonStyled>
+)
 
 FilterMineButton.propTypes = {
   onClick: PropTypes.func.isRequired,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -17,42 +17,38 @@ const MaterialButtonStyled = styled(MaterialButton)`
   z-index: 2;
 `
 
-class Button extends Component {
-  getButtonIcon() {
-    if (this.props.isWorking) {
-      return (
-        <Rotating>
-          <IconLoading />
-        </Rotating>
-      )
-    }
-
-    if (this.props.isPushEnabled) {
-      return <IconNotificationsActive />
-    }
-
-    if (this.props.canPushBeEnabled) {
-      return <IconNotificationsNone />
-    }
-
-    return <IconNotificationsOff />
-  }
-
-  render() {
+const getButtonIcon = (isWorking, isPushEnabled, canPushBeEnabled) => {
+  if (isWorking) {
     return (
-      <MaterialButtonStyled
-        onClick={() => {
-          this.props.onClick()
-        }}
-        fab
-        mini
-        color="accent"
-      >
-        {this.getButtonIcon()}
-      </MaterialButtonStyled>
+      <Rotating>
+        <IconLoading />
+      </Rotating>
     )
   }
+
+  if (isPushEnabled) {
+    return <IconNotificationsActive />
+  }
+
+  if (canPushBeEnabled) {
+    return <IconNotificationsNone />
+  }
+
+  return <IconNotificationsOff />
 }
+
+const Button = ({ isWorking, isPushEnabled, canPushBeEnabled }) => (
+  <MaterialButtonStyled
+    onClick={() => {
+      this.props.onClick()
+    }}
+    fab
+    mini
+    color="accent"
+  >
+    {getButtonIcon(isWorking, isPushEnabled, canPushBeEnabled)}
+  </MaterialButtonStyled>
+)
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
