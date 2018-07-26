@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 import { CircularProgress as MaterialCircularProgress } from 'material-ui/Progress'
 import { blue } from 'material-ui/colors'
 
-class CircularProgress extends Component {
-  render() {
-    const { color, size, thickness } = this.props
+const MaterialCircularProgressStyled = styled(MaterialCircularProgress)`
+  margin-right: 0px;
+  color: ${props => (props.color ? props.color : blue[800])} !important;
+`
 
-    const MaterialCircularProgressStyled = styled(MaterialCircularProgress)`
-      margin-right: 0px;
-      color: ${color ? color : blue[800]} !important;
-    `
-
-    return <MaterialCircularProgressStyled size={size} thickness={thickness} />
-  }
-}
+const CircularProgress = ({ color, size, thickness }) => (
+  <MaterialCircularProgressStyled
+    color={color}
+    size={size}
+    thickness={thickness}
+  />
+)
 
 CircularProgress.propTypes = {
   color: PropTypes.string,

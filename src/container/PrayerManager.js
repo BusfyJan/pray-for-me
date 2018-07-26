@@ -11,12 +11,8 @@ import MenuWrapper from 'component/util/MenuWrapper.js'
 import Select from 'component/util/Select.js'
 
 class PrayerManager extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      isRefreshing: false
-    }
+  state = {
+    isRefreshing: false
   }
 
   componentDidMount() {

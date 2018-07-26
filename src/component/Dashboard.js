@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import PushSettings from 'container/PushSettings.js'
@@ -12,18 +12,14 @@ const Wrapper = styled.div`
   margin-bottom: 30px;
 `
 
-class App extends Component {
-  render() {
-    return (
-      <Wrapper>
-        <PushSettings />
-        <PrayerCreator />
-        <PrayerList />
-        <PrayerManager />
-        <NotificationDisplayer />
-      </Wrapper>
-    )
-  }
-}
+const App = () => (
+  <Wrapper>
+    <PushSettings />
+    <PrayerCreator />
+    <PrayerList />
+    <PrayerManager />
+    <NotificationDisplayer />
+  </Wrapper>
+)
 
 export default App

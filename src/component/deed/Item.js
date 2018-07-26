@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Badge from 'material-ui/Badge'
 import styled from 'styled-components'
@@ -12,24 +12,19 @@ const BadgeStyled = styled(Badge)`
   }
 `
 
-class Item extends Component {
-  render() {
-    const { onClick, count, type } = this.props
-    return (
-      <span
-        onClick={() => {
-          if (onClick) {
-            onClick()
-          }
-        }}
-      >
-        <BadgeStyled badgeContent={count} color="primary">
-          <DeedIcon type={type} />
-        </BadgeStyled>
-      </span>
-    )
-  }
-}
+const Item = ({ onClick, count, type }) => (
+  <span
+    onClick={() => {
+      if (onClick) {
+        onClick()
+      }
+    }}
+  >
+    <BadgeStyled badgeContent={count} color="primary">
+      <DeedIcon type={type} />
+    </BadgeStyled>
+  </span>
+)
 
 Item.propTypes = {
   onClick: PropTypes.func,

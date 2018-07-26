@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -9,37 +9,34 @@ import { green, blue, red } from 'material-ui/colors'
 
 import deeds from 'constants/deedTypes.js'
 
-class Icon extends Component {
-  render() {
-    const { type } = this.props
-    let Icon = null
-    let color = null
+const Icon = ({ type }) => {
+  let Icon = null
+  let color = null
 
-    if (type === deeds.PRAYER) {
-      Icon = PrayerIcon
-      color = red[500]
-    }
-
-    if (type === deeds.MASS) {
-      Icon = MassIcon
-      color = blue[500]
-    }
-
-    if (type === deeds.GOOD_DEED) {
-      Icon = GoodDeedIcon
-      color = green[500]
-    }
-
-    if (Icon === null) {
-      throw new Error('Icon type ' + type + ' not supported!')
-    }
-
-    Icon = styled(Icon)`
-      color: ${color};
-    `
-
-    return <Icon />
+  if (type === deeds.PRAYER) {
+    Icon = PrayerIcon
+    color = red[500]
   }
+
+  if (type === deeds.MASS) {
+    Icon = MassIcon
+    color = blue[500]
+  }
+
+  if (type === deeds.GOOD_DEED) {
+    Icon = GoodDeedIcon
+    color = green[500]
+  }
+
+  if (Icon === null) {
+    throw new Error('Icon type ' + type + ' not supported!')
+  }
+
+  Icon = styled(Icon)`
+    color: ${color};
+  `
+
+  return <Icon />
 }
 
 Icon.propTypes = {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -15,11 +15,7 @@ const RotatingWrapper = styled.span`
   animation: ${animationKeyframe} 1s linear infinite;
 `
 
-class Rotating extends Component {
-  render() {
-    return <RotatingWrapper>{this.props.children}</RotatingWrapper>
-  }
-}
+const Rotating = ({ children }) => <RotatingWrapper>{children}</RotatingWrapper>
 
 Rotating.propTypes = {
   children: PropTypes.node
