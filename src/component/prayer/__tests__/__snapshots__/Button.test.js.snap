@@ -2,9 +2,8 @@
 
 exports[`Button render 1`] = `
 <button
-  className="MuiButtonBase-root-16 MuiButton-root-1 MuiButton-flatPrimary-3 sc-bdVaJa dBljYH"
+  className="MuiButtonBase-root-16 MuiButton-root-1 MuiButton-raised-8 MuiButton-fab-14 MuiButton-raisedPrimary-10 sc-bdVaJa dBljYH"
   disabled={false}
-  fab={true}
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}
@@ -16,16 +15,16 @@ exports[`Button render 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  tabIndex="0"
+  role="button"
+  tabIndex={0}
   type="button"
 >
   <span
-    className="MuiButton-label-2"
+    className="MuiButton-label-3"
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-19"
-      color={undefined}
+      className="MuiSvgIcon-root-18"
       focusable="false"
       viewBox="0 0 24 24"
     >

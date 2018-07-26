@@ -4,7 +4,6 @@ exports[`Icon render 1`] = `
 <svg
   aria-hidden="true"
   className="MuiSvgIcon-root-1 sc-bdVaJa gWoXGU"
-  color={undefined}
   focusable="false"
   viewBox="0 0 24 24"
 >

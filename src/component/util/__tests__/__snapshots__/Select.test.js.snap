@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select render 1`] = `
+<span
+  className="MuiSwitch-root-5"
+>
+  <span
+    className="MuiButtonBase-root-25 MuiIconButton-root-16 MuiSwitchBase-root-11 MuiSwitchBase-default-13 MuiSwitch-default-8 MuiSwitchBase-checked-14 MuiSwitch-checked-9"
+    disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    role={undefined}
+    tabIndex={null}
+  >
+    <span
+      className="MuiIconButton-label-22"
+    >
+      <span
+        className="MuiSwitch-icon-7 Switcher-iOSIcon-3"
+      />
+      <input
+        checked={true}
+        className="MuiSwitchBase-input-12"
+        disabled={undefined}
+        name={undefined}
+        onChange={[Function]}
+        tabIndex={undefined}
+        type="checkbox"
+        value={undefined}
+      />
+    </span>
+  </span>
+  <span
+    className="MuiSwitch-bar-6 Switcher-iOSBar-2"
+  />
+</span>
+`;

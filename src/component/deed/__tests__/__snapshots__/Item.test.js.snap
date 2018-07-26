@@ -4,13 +4,12 @@ exports[`Item render 1`] = `
 <span
   onClick={[Function]}
 >
-  <span
+  <div
     className="MuiBadge-root-1 sc-bdVaJa fRAYjp"
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-6 sc-bwzfXH jlGedI"
-      color={undefined}
+      className="MuiSvgIcon-root-5 sc-bwzfXH jlGedI"
       focusable="false"
       viewBox="0 0 24 24"
     >
@@ -23,6 +22,6 @@ exports[`Item render 1`] = `
     >
       5
     </span>
-  </span>
+  </div>
 </span>
 `;
