@@ -9,7 +9,7 @@ exports[`Item render 1`] = `
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-6 sc-bwzfXH dzLCBD"
+      className="MuiSvgIcon-root-6 sc-bwzfXH jlGedI"
       color={undefined}
       focusable="false"
       viewBox="0 0 24 24"
