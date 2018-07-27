@@ -29,7 +29,7 @@ const RefreshButton = ({ active, onClick }) => (
         onClick()
       }
     }}
-    fab
+    variant="fab"
     mini
     color="primary"
   >
