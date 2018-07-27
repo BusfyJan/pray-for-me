@@ -13,7 +13,7 @@ const MaterialButtonStyled = styled(MaterialButton)`
 `
 
 const Button = ({ onClick }) => (
-  <MaterialButtonStyled onClick={onClick} fab color="primary">
+  <MaterialButtonStyled onClick={onClick} variant="fab" color="primary">
     <IconAdd />
   </MaterialButtonStyled>
 )

@@ -44,9 +44,9 @@ class Button extends Component {
         onClick={() => {
           this.props.onClick()
         }}
-        fab
+        variant="fab"
         mini
-        color="accent"
+        color="secondary"
       >
         {this.getButtonIcon()}
       </MaterialButtonStyled>

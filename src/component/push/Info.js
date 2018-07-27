@@ -37,7 +37,7 @@ class Info extends Component {
           <br />
           <br />
           <ButtonStyled
-            raised
+            variant="raised"
             color="primary"
             onClick={() => {
               this.props.onRequestPermissionClicked()

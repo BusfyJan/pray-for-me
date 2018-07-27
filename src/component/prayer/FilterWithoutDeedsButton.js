@@ -16,7 +16,7 @@ const MaterialButtonStyled = styled(MaterialButton)`
 `
 
 const FilterWithoutDeedsButton = ({ onClick, active }) => (
-  <MaterialButtonStyled onClick={onClick} fab mini color="primary">
+  <MaterialButtonStyled onClick={onClick} variant="fab" mini color="primary">
     {active ? <IconActive /> : <IconInactive />}
   </MaterialButtonStyled>
 )
