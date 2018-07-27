@@ -8,6 +8,8 @@ stages:
 lint:
     stage: lint
     image: ciricihq/gitlab-sonar-scanner:3.0.0
+    only:
+        - master
     script:
         - sonar-scanner
 
