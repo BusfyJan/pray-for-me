@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
@@ -23,67 +23,64 @@ import {
 
 import prayers from 'constants/prayerTypes.js'
 
-class Icon extends Component {
-  render() {
-    const { type } = this.props
-    let Icon = null
-    let color = null
+const Icon = ({ type }) => {
+  let Icon = null
+  let color = null
 
-    if (type === prayers.GUIDANCE) {
-      Icon = GuidanceIcon
-      color = blue[500]
-    }
-
-    if (type === prayers.HEALTH) {
-      Icon = HealthIcon
-      color = pink[500]
-    }
-
-    if (type === prayers.JOY) {
-      Icon = JoyIcon
-      color = yellow[500]
-    }
-
-    if (type === prayers.MONEY) {
-      Icon = MoneyIcon
-      color = green[500]
-    }
-
-    if (type === prayers.PEACE) {
-      Icon = PeaceIcon
-      color = deepPurple[500]
-    }
-
-    if (type === prayers.RELATIONSHIPS) {
-      Icon = RelationshipsIcon
-      color = red[500]
-    }
-
-    if (type === prayers.TIME) {
-      Icon = TimeIcon
-      color = orange[500]
-    }
-
-    if (type === prayers.SCHOOL_AND_JOB) {
-      Icon = SchoolAndJobIcon
-      color = blue[500]
-    }
-
-    if (type === prayers.MOTIVATION) {
-      Icon = MotivationIcon
-      color = deepPurple[500]
-    }
-
-    if (Icon === null) {
-      throw new Error('Icon type ' + type + ' not supported!')
-    }
-
-    Icon = styled(Icon)`
-      color: ${color};
-    `
-
-    return <Icon />
+  if (type === prayers.GUIDANCE) {
+    Icon = GuidanceIcon
+    color = blue[500]
   }
+
+  if (type === prayers.HEALTH) {
+    Icon = HealthIcon
+    color = pink[500]
+  }
+
+  if (type === prayers.JOY) {
+    Icon = JoyIcon
+    color = yellow[500]
+  }
+
+  if (type === prayers.MONEY) {
+    Icon = MoneyIcon
+    color = green[500]
+  }
+
+  if (type === prayers.PEACE) {
+    Icon = PeaceIcon
+    color = deepPurple[500]
+  }
+
+  if (type === prayers.RELATIONSHIPS) {
+    Icon = RelationshipsIcon
+    color = red[500]
+  }
+
+  if (type === prayers.TIME) {
+    Icon = TimeIcon
+    color = orange[500]
+  }
+
+  if (type === prayers.SCHOOL_AND_JOB) {
+    Icon = SchoolAndJobIcon
+    color = blue[500]
+  }
+
+  if (type === prayers.MOTIVATION) {
+    Icon = MotivationIcon
+    color = deepPurple[500]
+  }
+
+  if (Icon === null) {
+    throw new Error('Icon type ' + type + ' not supported!')
+  }
+
+  Icon = styled(Icon)`
+    color: ${color};
+  `
+
+  return <Icon />
 }
 
 Icon.propTypes = {

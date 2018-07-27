@@ -58,7 +58,12 @@ class MenuWrapper extends Component {
     const { items } = this.props
     return (
       <Fragment>
-        <ButtonWrapper fab mini color="primary" onClick={this.handleClick}>
+        <ButtonWrapper
+          variant="fab"
+          mini
+          color="primary"
+          onClick={this.handleClick}
+        >
           {anchorEl ? <CloseIcon /> : <SettingsIcon />}
         </ButtonWrapper>
         <Menu

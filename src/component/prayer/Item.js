@@ -117,8 +117,8 @@ class Item extends Component {
                     })
                   })
                 }}
-                raised
-                dense
+                variant="raised"
+                size="small"
                 color="primary"
               >
                 <FormattedMessage
@@ -137,8 +137,8 @@ class Item extends Component {
                 onClick={() => {
                   onResponseRequest()
                 }}
-                raised
-                dense
+                variant="raised"
+                size="small"
                 color="primary"
               >
                 <FormattedMessage

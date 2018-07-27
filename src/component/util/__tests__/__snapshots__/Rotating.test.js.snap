@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rotating render 1`] = `
+<span
+  className="sc-bdVaJa cHnfbA"
+>
+  Iam rotated
+</span>
+`;

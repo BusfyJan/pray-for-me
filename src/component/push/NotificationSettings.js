@@ -96,8 +96,8 @@ class NotificationSettings extends Component {
         <Divider />
         <ButtonWrapper>
           <Button
-            raised
-            dense
+            variant="raised"
+            size="small"
             color="primary"
             onClick={() => {
               this.onSubmit()
