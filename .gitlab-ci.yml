@@ -7,7 +7,7 @@ stages:
 
 lint:
     stage: lint
-    image: newtmitch/sonar-scanner:3.2.0-alpine
+    image: ciricihq/gitlab-sonar-scanner:3.0.0
     script:
         - sonar-scanner
 
