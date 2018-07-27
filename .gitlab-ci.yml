@@ -1,8 +1,20 @@
 image: node:9.11-alpine
 
 stages:
+    - lint
     - test
     - deploy
+
+lint:
+    stage: lint
+    image: newtmitch/sonar-scanner:3.2.0-alpine
+    script:
+        - sonar-scanner \
+            -Dsonar.projectKey=pray-for-me \
+            -Dsonar.organization=busfyjan-github \
+            -Dsonar.sources=. \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=43ecd7530f40dc8782222124cdfaacd28c0cd886
 
 test:
     stage: test
