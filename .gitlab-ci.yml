@@ -9,12 +9,7 @@ lint:
     stage: lint
     image: newtmitch/sonar-scanner:3.2.0-alpine
     script:
-        - sonar-scanner \
-            -D sonar.projectKey=pray-for-me \
-            -D sonar.organization=busfyjan-github \
-            -D sonar.sources=. \
-            -D sonar.host.url=https://sonarcloud.io \
-            -D sonar.login=43ecd7530f40dc8782222124cdfaacd28c0cd886
+        - sonar-scanner
 
 test:
     stage: test
