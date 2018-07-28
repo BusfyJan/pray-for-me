@@ -10,7 +10,7 @@ import { FormattedMessage } from 'react-intl'
 import CircularProgress from 'component/util/CircularProgress.js'
 import Typography from 'material-ui/Typography'
 
-class PushNotificationSettings extends Component {
+class PushNotifications extends Component {
   state = {
     isLoading: false,
     data: null
@@ -102,8 +102,8 @@ class PushNotificationSettings extends Component {
   }
 }
 
-PushNotificationSettings = connect(state => {
+PushNotifications = connect(state => {
   return {}
-})(PushNotificationSettings)
+})(PushNotifications)
 
-export default PushNotificationSettings
+export default PushNotifications
