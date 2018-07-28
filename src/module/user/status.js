@@ -8,7 +8,7 @@ export const init = () => {
     firebase.database().ref('.info/connected').on('value', function(snapshot) {
         if (snapshot.val() === false) {
             return;
-        };
+        }
 
         userStatusDatabaseRef
         .onDisconnect()
