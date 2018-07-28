@@ -1,5 +1,5 @@
 import React from 'react'
-import * as types from '../../actions/prayer'
+import * as types from 'actions/prayer'
 
 test('reducers', () => {
   it('should return the initial state', () => {

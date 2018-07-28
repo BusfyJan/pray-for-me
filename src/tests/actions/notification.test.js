@@ -1,12 +1,11 @@
 import React from 'react'
-import * as actions from '../notification'
-import * as types from '../notification'
+import * as actions from 'actions/notification'
 
 test('add', () => {
   it('should add notification', () => {
     const message = 'Hello notification'
     const expectedAction = {
-      type: types.ADD,
+      type: actions.ADD,
       message
     }
     expect(actions.add(message)).toEqual(expectedAction)
@@ -16,7 +15,7 @@ test('add', () => {
 test('pop', () => {
   it('should pop notification', () => {
     const expectedAction = {
-      type: types.POP
+      type: actions.POP
     }
     expect(actions.pop()).toEqual(expectedAction)
   })

@@ -28,15 +28,13 @@ const List = ({ items, onItemResponseRequest, onItemCloseRequest }) => (
         <Typography component="p">
           <FormattedMessage
             id="component.prayer.list.subheading1"
-            defaultMessage="Here you can see all prayer requests which need
-                            deeds to be added to them"
+            defaultMessage="Here you can see all prayer requests which need deeds to be added to them"
           />
         </Typography>
         <Typography component="p">
           <FormattedMessage
             id="component.prayer.list.subheading2"
-            defaultMessage="You can add deed by clicking the button on the
-                            bottom of each prayer request"
+            defaultMessage="You can add deed by clicking the button on the bottom of each prayer request"
           />
         </Typography>
       </PaperStyled>
