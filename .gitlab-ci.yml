@@ -10,11 +10,15 @@ lint:
     image: ciricihq/gitlab-sonar-scanner:3.0.0
     only:
         - master
+        - development
     script:
         - sonar-scanner -Dsonar.branch.name=${CI_COMMIT_REF_NAME} -Dsonar.login=${SONAR_TOKEN}
 
 test:
     stage: test
+    only:
+        - master
+        - development
     script:
         - export CI=true
         - npm install --unsafe-perm
