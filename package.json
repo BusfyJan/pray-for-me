@@ -33,14 +33,14 @@
     "translate:prepare": "NODE_ENV=production ./node_modules/.bin/babel-node src/i18n/translator.js",
     "deploy:development": "export REACT_APP_NODE_ENV=development && npm run build && npm run deploy:development:firebase && npm run deploy:development:sentry",
     "deploy:production": "export REACT_APP_NODE_ENV=production && npm run build && npm run deploy:production:firebase && npm run deploy:production:sentry",
-    "deploy:development:firebase": "./node_modules/.bin/firebase deploy -P development --token \"1/vtTervVPfbnW_nH06v20Y-ZLyWjVxneXmpznNAVEkeM\"",
-    "deploy:production:firebase": "./node_modules/.bin/firebase deploy -P default --token \"1/vtTervVPfbnW_nH06v20Y-ZLyWjVxneXmpznNAVEkeM\"",
+    "deploy:development:firebase": "./node_modules/.bin/firebase deploy -P development --token \"${FIREBASE_DEPLOY_TOKEN_DEVELOPMENT}\"",
+    "deploy:production:firebase": "./node_modules/.bin/firebase deploy -P default --token \"${FIREBASE_DEPLOY_TOKEN_PRODUCTION}\"",
     "deploy:development:sentry": "npm run deploy:development:sentry:release && npm run deploy:development:sentry:deploy",
     "deploy:production:sentry": "npm run deploy:production:sentry:release && npm run deploy:production:sentry:deploy",
-    "deploy:development:sentry:release": "curl https://sentry.io/api/hooks/release/builtin/1247108/ccea0c8db9dd4d0036c6b2c05018d15b51c9d04fd95e361e583de485a58b3d38/ -X POST -H 'Content-Type: application/json' -d '{\"version\": \"development\"}'",
-    "deploy:production:sentry:release": "curl https://sentry.io/api/hooks/release/builtin/1247108/ccea0c8db9dd4d0036c6b2c05018d15b51c9d04fd95e361e583de485a58b3d38/ -X POST -H 'Content-Type: application/json' -d '{\"version\": \"production\"}'",
-    "deploy:development:sentry:deploy": "curl https://sentry.io/api/0/organizations/janbusfy/releases/development/deploys/ -X POST -H 'Authorization: Bearer 4917a6ee7e5f466db8ba51a4472a8772fc9c248d9a104d8490612f9a2f72c903' -H 'Content-Type: application/json' -d ' {\"environment\":\"development\",\"name\":\"development\"}'",
-    "deploy:production:sentry:deploy": "curl https://sentry.io/api/0/organizations/janbusfy/releases/production/deploys/ -X POST -H 'Authorization: Bearer 4917a6ee7e5f466db8ba51a4472a8772fc9c248d9a104d8490612f9a2f72c903' -H 'Content-Type: application/json' -d ' {\"environment\":\"production\",\"name\":\"production\"}'"
+    "deploy:development:sentry:release": "curl https://sentry.io/api/hooks/release/builtin/1247108/${SENTRY_RELEASE_TOKEN}/ -X POST -H 'Content-Type: application/json' -d '{\"version\": \"development\"}'",
+    "deploy:production:sentry:release": "curl https://sentry.io/api/hooks/release/builtin/1247108/${SENTRY_RELEASE_TOKEN}/ -X POST -H 'Content-Type: application/json' -d '{\"version\": \"production\"}'",
+    "deploy:development:sentry:deploy": "curl https://sentry.io/api/0/organizations/janbusfy/releases/development/deploys/ -X POST -H \"Authorization: Bearer ${SENTRY_DEPLOY_TOKEN}\" -H 'Content-Type: application/json' -d ' {\"environment\":\"development\",\"name\":\"development\"}'",
+    "deploy:production:sentry:deploy": "curl https://sentry.io/api/0/organizations/janbusfy/releases/production/deploys/ -X POST -H \"Authorization: Bearer ${SENTRY_DEPLOY_TOKEN}\" -H 'Content-Type: application/json' -d ' {\"environment\":\"production\",\"name\":\"production\"}'"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
