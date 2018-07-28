@@ -11,7 +11,7 @@ lint:
     only:
         - master
     script:
-        - sonar-scanner
+        - sonar-scanner -Dsonar.branch.name=${CI_COMMIT_REF_NAME} -Dsonar.login=${SONAR_TOKEN}
 
 test:
     stage: test
