@@ -39,8 +39,8 @@
     "deploy:production:sentry": "npm run deploy:production:sentry:release && npm run deploy:production:sentry:deploy",
     "deploy:development:sentry:release": "curl https://sentry.io/api/hooks/release/builtin/1247108/${SENTRY_RELEASE_TOKEN}/ -X POST -H 'Content-Type: application/json' -d '{\"version\": \"development\"}'",
     "deploy:production:sentry:release": "curl https://sentry.io/api/hooks/release/builtin/1247108/${SENTRY_RELEASE_TOKEN}/ -X POST -H 'Content-Type: application/json' -d '{\"version\": \"production\"}'",
-    "deploy:development:sentry:deploy": "curl https://sentry.io/api/0/organizations/janbusfy/releases/development/deploys/ -X POST -H 'Authorization: Bearer $SENTRY_DEPLOY_TOKEN' -H 'Content-Type: application/json' -d ' {\"environment\":\"development\",\"name\":\"development\"}'",
-    "deploy:production:sentry:deploy": "curl https://sentry.io/api/0/organizations/janbusfy/releases/production/deploys/ -X POST -H 'Authorization: Bearer $SENTRY_DEPLOY_TOKEN' -H 'Content-Type: application/json' -d ' {\"environment\":\"production\",\"name\":\"production\"}'"
+    "deploy:development:sentry:deploy": "curl https://sentry.io/api/0/organizations/janbusfy/releases/development/deploys/ -X POST -H \"Authorization: Bearer ${SENTRY_DEPLOY_TOKEN}\" -H 'Content-Type: application/json' -d ' {\"environment\":\"development\",\"name\":\"development\"}'",
+    "deploy:production:sentry:deploy": "curl https://sentry.io/api/0/organizations/janbusfy/releases/production/deploys/ -X POST -H \"Authorization: Bearer ${SENTRY_DEPLOY_TOKEN}\" -H 'Content-Type: application/json' -d ' {\"environment\":\"production\",\"name\":\"production\"}'"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
