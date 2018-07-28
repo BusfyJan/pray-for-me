@@ -1,5 +1,5 @@
 import React from 'react'
-import Rotating from '../Rotating'
+import Rotating from 'component/util/Rotating'
 import renderer from 'react-test-renderer'
 
 test('Rotating render', () => {

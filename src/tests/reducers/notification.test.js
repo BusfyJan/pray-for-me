@@ -1,5 +1,5 @@
 import React from 'react'
-import * as types from '../../actions/notification'
+import * as types from 'actions/notification'
 
 test('reducers', () => {
   it('should return the initial state', () => {
