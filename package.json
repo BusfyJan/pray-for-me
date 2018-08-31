@@ -2,23 +2,6 @@
   "name": "pray-for-me",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "firebase": "^4.13.1",
-    "material-ui": "^1.0.0-beta.24",
-    "material-ui-icons": "^1.0.0-beta.36",
-    "moment": "^2.22.2",
-    "prop-types": "^15.6.2",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-ga": "^2.5.3",
-    "react-intl": "^2.4.0",
-    "react-redux": "^5.0.7",
-    "react-scripts": "^1.1.4",
-    "react-test-renderer": "^16.4.1",
-    "redux": "^4.0.0",
-    "redux-devtools-extension": "2.13.2",
-    "styled-components": "^3.3.3"
-  },
   "scripts": {
     "postinstall": "npm run functions:install",
     "start": "export REACT_APP_NODE_ENV=development && react-scripts start",
@@ -42,6 +25,21 @@
     "deploy:development:sentry:deploy": "curl https://sentry.io/api/0/organizations/janbusfy/releases/development/deploys/ -X POST -H \"Authorization: Bearer ${SENTRY_DEPLOY_TOKEN}\" -H 'Content-Type: application/json' -d ' {\"environment\":\"development\",\"name\":\"development\"}'",
     "deploy:production:sentry:deploy": "curl https://sentry.io/api/0/organizations/janbusfy/releases/production/deploys/ -X POST -H \"Authorization: Bearer ${SENTRY_DEPLOY_TOKEN}\" -H 'Content-Type: application/json' -d ' {\"environment\":\"production\",\"name\":\"production\"}'"
   },
+  "dependencies": {
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
+    "firebase": "^5.4.2",
+    "moment": "^2.22.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-ga": "^2.5.3",
+    "react-intl": "^2.4.0",
+    "react-redux": "^5.0.7",
+    "react-scripts": "^1.1.4",
+    "redux": "^4.0.0",
+    "styled-components": "^3.3.3"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-react-intl": "^2.4.0",
@@ -49,7 +47,9 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^3.1.2",
     "babel-preset-stage-0": "^6.24.1",
-    "firebase-tools": "^3.19.3",
+    "firebase-tools": "^4.2.1",
+    "react-test-renderer": "^16.4.1",
+    "redux-devtools-extension": "2.13.5",
     "rmdir": "^1.2.0"
   }
 }

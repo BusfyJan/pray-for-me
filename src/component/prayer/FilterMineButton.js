@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import MaterialButton from 'material-ui/Button'
-import IconActive from 'material-ui-icons/Face'
-import IconInactive from 'material-ui-icons/SupervisorAccount'
-import { blue } from 'material-ui/colors'
+import MaterialButton from '@material-ui/core/Button'
+import IconActive from '@material-ui/icons/Face'
+import IconInactive from '@material-ui/icons/SupervisorAccount'
+import { blue } from '@material-ui/core/colors'
 
 const MaterialButtonStyled = styled(MaterialButton)`
   && {

@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-import MaterialButton from 'material-ui/Button'
-import IconNotificationsNone from 'material-ui-icons/NotificationsNone'
-import IconNotificationsActive from 'material-ui-icons/NotificationsActive'
-import IconNotificationsOff from 'material-ui-icons/NotificationsOff'
-import IconLoading from 'material-ui-icons/Cached'
+import MaterialButton from '@material-ui/core/Button'
+import IconNotificationsNone from '@material-ui/icons/NotificationsNone'
+import IconNotificationsActive from '@material-ui/icons/NotificationsActive'
+import IconNotificationsOff from '@material-ui/icons/NotificationsOff'
+import IconLoading from '@material-ui/icons/Cached'
 
 import Rotating from 'component/util/Rotating.js'
 

@@ -3,10 +3,13 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 
-import Dialog, { DialogTitle, DialogContent } from 'material-ui/Dialog'
-import List, { ListItem } from 'material-ui/List'
-import Typography from 'material-ui/Typography'
-import Divider from 'material-ui/Divider'
+import Dialog from '@material-ui/core/Dialog'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import DialogContent from '@material-ui/core/DialogContent'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import Typography from '@material-ui/core/Typography'
+import Divider from '@material-ui/core/Divider'
 
 import Item from 'component/deed/Item.js'
 
