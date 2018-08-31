@@ -1,4 +1,5 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import 'firebase/database';
 import {init as initStatus} from 'module/user/status.js';
 
 export const init = async () => {
