@@ -1,3 +1,4 @@
+import Raven from 'raven-js/dist/raven.min.js';
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from 'container/App.js'
@@ -19,7 +20,7 @@ if (process.env.REACT_APP_NODE_ENV === 'production') {
 }
 
 if (process.env.NODE_ENV !== "development") {
-    window.Raven.config(
+    Raven.config(
       'https://ce679ec9cd394d458a066fb881804c02@sentry.io/1247108',
       {
         release: process.env.REACT_APP_NODE_ENV,
