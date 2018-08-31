@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-import MaterialButton from 'material-ui/Button'
-import IconRefresh from 'material-ui-icons/Loop'
-import { green } from 'material-ui/colors'
+import MaterialButton from '@material-ui/core/Button'
+import IconRefresh from '@material-ui/icons/Loop'
+import { green } from '@material-ui/core/colors'
 
 import Rotating from 'component/util/Rotating.js'
 

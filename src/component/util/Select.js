@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Switch from 'material-ui/Switch'
-import { withStyles } from 'material-ui/styles'
+import Switch from '@material-ui/core/Switch'
+import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
   iOSSwitchBase: {

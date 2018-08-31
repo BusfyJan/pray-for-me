@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-import { CircularProgress as MaterialCircularProgress } from 'material-ui/Progress'
-import { blue } from 'material-ui/colors'
+import MaterialCircularProgress from '@material-ui/core/CircularProgress'
+import { blue } from '@material-ui/core/colors'
 
 const MaterialCircularProgressStyled = styled(MaterialCircularProgress)`
   margin-right: 0px;

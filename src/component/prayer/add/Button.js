@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-import MaterialButton from 'material-ui/Button'
-import IconAdd from 'material-ui-icons/Add'
+import MaterialButton from '@material-ui/core/Button'
+import IconAdd from '@material-ui/icons/Add'
 
 const MaterialButtonStyled = styled(MaterialButton)`
   position: fixed !important;

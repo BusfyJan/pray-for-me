@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import SnackbarMaterial from 'material-ui/Snackbar'
+import SnackbarMaterial from '@material-ui/core/Snackbar'
 import { notification as notificationActions } from 'actions/index.js'
-import CancelIcon from 'material-ui-icons/Cancel'
+import CancelIcon from '@material-ui/icons/Cancel'
 
 class NotificationDisplayer extends Component {
   onClose = () => {

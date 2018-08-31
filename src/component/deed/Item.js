@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Badge from 'material-ui/Badge'
+import Badge from '@material-ui/core/Badge'
 import styled from 'styled-components'
 
 import DeedIcon from 'component/deed/Icon.js'

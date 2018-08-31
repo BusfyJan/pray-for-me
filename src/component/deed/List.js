@@ -3,8 +3,9 @@ import { FormattedMessage } from 'react-intl'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-import MaterialList, { ListItem as MaterialListItem } from 'material-ui/List'
-import ListSubheader from 'material-ui/List/ListSubheader'
+import MaterialList from '@material-ui/core/List'
+import MaterialListItem from '@material-ui/core/ListItem'
+import ListSubheader from '@material-ui/core/ListSubheader'
 
 import Info from 'component/deed/Info.js'
 import Item from 'component/deed/Item.js'
