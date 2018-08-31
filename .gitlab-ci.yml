@@ -21,7 +21,7 @@ test:
         - development
     script:
         - export CI=true
-        - npm install --unsafe-perm
+        - npm ci --unsafe-perm
         - npm test
 
 deploy_development:
@@ -32,7 +32,7 @@ deploy_development:
         - development
     script:
         - apk add --no-cache --update curl
-        - npm install --unsafe-perm
+        - npm ci --unsafe-perm
         - npm run deploy:development
         
 deploy_production:
@@ -43,5 +43,5 @@ deploy_production:
         - master
     script:
         - apk add --no-cache --update curl
-        - npm install --unsafe-perm
+        - npm ci --unsafe-perm
         - npm run deploy:production
