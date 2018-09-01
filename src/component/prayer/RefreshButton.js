@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { injectIntl, defineMessages } from 'react-intl';
 
 import MaterialButton from '@material-ui/core/Button'
 import IconRefresh from '@material-ui/icons/Loop'
@@ -22,30 +23,40 @@ const MaterialButtonStyled = styled(MaterialButton)`
   }
 `
 
-const RefreshButton = ({ active, onClick }) => (
-  <MaterialButtonStyled
-    onClick={() => {
-      if (!active) {
-        onClick()
-      }
-    }}
-    variant="fab"
-    mini
-    color="primary"
-  >
-    {active ? (
-      <Rotating>
-        <IconRefresh />
-      </Rotating>
-    ) : (
-      <IconRefresh />
-    )}
-  </MaterialButtonStyled>
-)
+const componentMessages = defineMessages({
+    title: {
+        id: "component.prayer.refreshButton.title",
+        defaultMessage: "Refresh prayer requests"
+    }
+});
+
+class RefreshButton extends Component {
+    render() {
+        return <MaterialButtonStyled
+          onClick={() => {
+            if (!this.props.active) {
+              this.props.onClick()
+            }
+          }}
+          variant="fab"
+          mini
+          color="primary"
+          aria-label={this.props.intl.formatMessage({...componentMessages.title})}
+        >
+          {this.props.active ? (
+            <Rotating>
+              <IconRefresh />
+            </Rotating>
+          ) : (
+            <IconRefresh />
+          )}
+      </MaterialButtonStyled>;
+    }
+}
 
 RefreshButton.propTypes = {
   active: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired
 }
 
-export default RefreshButton
+export default injectIntl(RefreshButton);
