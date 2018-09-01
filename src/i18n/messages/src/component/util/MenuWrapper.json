@@ -1,0 +1,10 @@
+[
+  {
+    "id": "component.util.menuWrapper.closeSettings",
+    "defaultMessage": "Close settings"
+  },
+  {
+    "id": "component.util.menuWrapper.openSettings",
+    "defaultMessage": "Open settings"
+  }
+]
