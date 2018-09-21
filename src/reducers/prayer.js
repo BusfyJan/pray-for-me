@@ -6,7 +6,7 @@ const defaultState = {
   withoutDeeds: false
 }
 
-const prayer = (state = defaultState, action) => {
+const prayer = (state = defaultState, action = null) => {
   switch (action.type) {
     case prayerActions.SET_ONLY_MINE:
       return Object.assign({}, state, {

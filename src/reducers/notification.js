@@ -1,7 +1,7 @@
 import { notification as notificationActions } from "actions/index.js";
 const defaultState = { notifications: [] };
 
-const notification = (state = defaultState, action) => {
+const notification = (state = defaultState, action = null) => {
     switch (action.type) {
         case notificationActions.ADD:
             const notificationsToAdd = state.notifications.slice();
