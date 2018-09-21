@@ -127,7 +127,7 @@ class PrayerManager extends Component {
               text: (
                 <FormattedMessage
                   id="container.prayerManager.myDeeds"
-                  defaultMessage="My deeds"
+                  defaultMessage="My prayer requests"
                 />
               ),
               children: (
@@ -141,7 +141,7 @@ class PrayerManager extends Component {
               text: (
                 <FormattedMessage
                   id="container.prayerManager.emptyDeeds"
-                  defaultMessage="Empty deeds"
+                  defaultMessage="Prayer requests without deeds"
                 />
               ),
               children: (
