@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
+import { injectIntl, defineMessages } from 'react-intl';
 
 import Menu from 'material-ui/Menu'
 import MenuItem from 'material-ui/Menu/MenuItem'
@@ -41,6 +42,18 @@ const SwitchWrapper = styled.div`
   text-align: right;
   width: 100%;
 `
+
+const componentMessages = defineMessages({
+    closeSettings: {
+        id: "component.util.menuWrapper.closeSettings",
+        defaultMessage: "Close settings"
+    },
+    openSettings: {
+        id: "component.util.menuWrapper.openSettings",
+        defaultMessage: "Open settings"
+    }
+});
+
 class MenuWrapper extends Component {
   state = {
     anchorEl: null
@@ -63,6 +76,11 @@ class MenuWrapper extends Component {
           mini
           color="primary"
           onClick={this.handleClick}
+          aria-label={
+              anchorEl
+                ? this.props.intl.formatMessage({...componentMessages.closeSettings})
+                : this.props.intl.formatMessage({...componentMessages.openSettings})
+          }
         >
           {anchorEl ? <CloseIcon /> : <SettingsIcon />}
         </ButtonWrapper>
@@ -91,4 +109,4 @@ class MenuWrapper extends Component {
   }
 }
 
-export default MenuWrapper
+export default injectIntl(MenuWrapper)

@@ -1,5 +1,4 @@
-{
-  "sk": {
+{ "sk": {
     "component.deed.add.form.title": "Čo dokážeš obetovať na tento úmysel?",
     "component.deed.add.form.cancel": "Zrušiť",
     "component.deed.info.textMass":
@@ -13,6 +12,7 @@
     "component.deed.title.guidance": "Modlitba",
     "component.deed.title.health": "Svätá omša",
     "component.deed.title.goodDeed": "Dobrý skutok",
+    "component.prayer.add.button.title": "Pridať novú prosbu",
     "component.prayer.add.form.title":
       "V akej oblasti si praješ vidieť zázraky?",
     "component.prayer.add.form.cancel": "Zrušiť",
@@ -49,6 +49,7 @@
     "component.prayer.title.time": "Čas",
     "component.prayer.title.schoolAndJob": "Práca a škola",
     "component.prayer.title.motivation": "Motivácia",
+    "component.push.button.title": "Otvoriť nastavenia notifikácií",
     "component.push.info.notificationsManuallyDisabled":
       "Upozornenia sú vypnuté. Môžeš ich zapnúť v nastaveniach prehliadača",
     "component.push.info.notificationsDisabled":
@@ -60,6 +61,8 @@
     "component.push.notificationSettings.notifyWhenDeedWasAddedToMyPrayerRequest":
       "Upozorniť pri reakcii na moju prosbu",
     "component.push.notificationSettings.save": "Uložiť",
+    "component.util.menuWrapper.closeSettings": "Otvoriť nastavenia",
+    "component.util.menuWrapper.openSettings": "Zatvoriť nastavenia",
     "container.prayerCreator.prayerAddedSuccessfully": "Prosba zdieľaná",
     "container.prayerCreator.prayerAddingFailed":
       "Prosbu sa nepodarilo zdieľať",

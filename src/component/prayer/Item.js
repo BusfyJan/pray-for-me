@@ -32,7 +32,7 @@ const OwnRequestInfoWrapper = styled.span`
   color: white;
   padding: 3px 5px;
   margin-left: 5px;
-  background: ${orange[500]};
+  background: ${orange[800]};
   border-radius: 3px;
   font-size: 0.75em;
 `
@@ -42,7 +42,7 @@ const TimestampInfoWrapper = styled.span`
   color: white;
   padding: 3px 5px;
   margin-left: 5px;
-  background: ${blue[500]};
+  background: ${blue[800]};
   border-radius: 3px;
   font-size: 0.75em;
 `
@@ -52,7 +52,7 @@ const UserStatusOnlineInfoWrapper = styled.span`
   color: white;
   padding: 3px 5px;
   margin-left: 5px;
-  background: ${green[500]};
+  background: ${green[800]};
   border-radius: 3px;
   font-size: 0.75em;
 `
