@@ -8,7 +8,7 @@ import { getAll as getAllPrayers } from 'module/prayer.js'
 import { FormattedMessage } from 'react-intl'
 import RefreshButton from 'component/prayer/RefreshButton.js'
 import MenuWrapper from 'component/util/MenuWrapper.js'
-import Select from 'component/util/Select.js'
+import Switcher from 'component/util/Switcher.js'
 
 class PrayerManager extends Component {
   state = {
@@ -131,7 +131,7 @@ class PrayerManager extends Component {
                 />
               ),
               children: (
-                <Select
+                <Switcher
                   isChecked={this.props.onlyMine}
                   switchClicked={this.handleChangeFilter}
                 />
@@ -145,7 +145,7 @@ class PrayerManager extends Component {
                 />
               ),
               children: (
-                <Select
+                <Switcher
                   isChecked={this.props.withoutDeeds}
                   switchClicked={this.handleSetOnlyWithoutDeeds}
                 />
