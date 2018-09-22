@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
 
 firebase.initializeApp(
     process.env.REACT_APP_NODE_ENV === 'development'

@@ -1,4 +1,5 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import 'firebase/messaging';
 
 export const isSupported = () => {
     return "serviceWorker" in navigator && "PushManager" in window;

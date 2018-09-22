@@ -2,15 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import HealthIcon from 'material-ui-icons/Accessibility'
-import MoneyIcon from 'material-ui-icons/AttachMoney'
-import RelationshipsIcon from 'material-ui-icons/Favorite'
-import TimeIcon from 'material-ui-icons/Watch'
-import GuidanceIcon from 'material-ui-icons/Gesture'
-import JoyIcon from 'material-ui-icons/InsertEmoticon'
-import PeaceIcon from 'material-ui-icons/FilterVintage'
-import MotivationIcon from 'material-ui-icons/Whatshot'
-import SchoolAndJobIcon from 'material-ui-icons/School'
+import HealthIcon from '@material-ui/icons/Accessibility'
+import MoneyIcon from '@material-ui/icons/AttachMoney'
+import RelationshipsIcon from '@material-ui/icons/Favorite'
+import TimeIcon from '@material-ui/icons/Watch'
+import GuidanceIcon from '@material-ui/icons/Gesture'
+import JoyIcon from '@material-ui/icons/InsertEmoticon'
+import PeaceIcon from '@material-ui/icons/FilterVintage'
+import MotivationIcon from '@material-ui/icons/Whatshot'
+import SchoolAndJobIcon from '@material-ui/icons/School'
 import {
   green,
   blue,
@@ -19,7 +19,7 @@ import {
   orange,
   deepPurple,
   pink
-} from 'material-ui/colors'
+} from '@material-ui/core/colors'
 
 import prayers from 'constants/prayerTypes.js'
 

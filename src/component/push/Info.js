@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
 
-import Dialog, { DialogTitle, DialogContent } from 'material-ui/Dialog'
-import Button from 'material-ui/Button'
-import Typography from 'material-ui/Typography'
-import Divider from 'material-ui/Divider'
+import Dialog from '@material-ui/core/Dialog'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import DialogContent from '@material-ui/core/DialogContent'
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
+import Divider from '@material-ui/core/Divider'
 
 import PushNotifications from 'container/PushNotifications.js'
 

@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import { notification as notificationActions } from 'actions/index.js'
 import { FormattedMessage } from 'react-intl'
 import CircularProgress from 'component/util/CircularProgress.js'
-import Typography from 'material-ui/Typography'
+import Typography from '@material-ui/core/Typography'
 
 class PushNotifications extends Component {
   state = {

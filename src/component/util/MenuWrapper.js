@@ -2,12 +2,12 @@ import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import { injectIntl, defineMessages } from 'react-intl';
 
-import Menu from 'material-ui/Menu'
-import MenuItem from 'material-ui/Menu/MenuItem'
-import SettingsIcon from 'material-ui-icons/Settings'
-import CloseIcon from 'material-ui-icons/Close'
-import MaterialButton from 'material-ui/Button'
-import { blue } from 'material-ui/colors'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
+import SettingsIcon from '@material-ui/icons/Settings'
+import CloseIcon from '@material-ui/icons/Close'
+import MaterialButton from '@material-ui/core/Button'
+import { blue } from '@material-ui/core/colors'
 
 const ButtonWrapper = styled(MaterialButton)`
   && {
