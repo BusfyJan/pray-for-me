@@ -21,10 +21,10 @@
   },
   {
     "id": "container.prayerManager.myDeeds",
-    "defaultMessage": "My deeds"
+    "defaultMessage": "My prayer requests"
   },
   {
     "id": "container.prayerManager.emptyDeeds",
-    "defaultMessage": "Empty deeds"
+    "defaultMessage": "Prayer requests without deeds"
   }
 ]

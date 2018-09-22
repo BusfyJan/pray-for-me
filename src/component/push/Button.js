@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { injectIntl, defineMessages } from 'react-intl';
 
 import MaterialButton from '@material-ui/core/Button'
 import IconNotificationsNone from '@material-ui/icons/NotificationsNone'
@@ -16,6 +17,13 @@ const MaterialButtonStyled = styled(MaterialButton)`
   bottom: 7px;
   z-index: 2;
 `
+
+const componentMessages = defineMessages({
+    title: {
+        id: "component.push.button.title",
+        defaultMessage: "Open notification settings"
+    }
+});
 
 class Button extends Component {
   getButtonIcon() {
@@ -47,6 +55,7 @@ class Button extends Component {
         variant="fab"
         mini
         color="secondary"
+        aria-label={this.props.intl.formatMessage({...componentMessages.title})}
       >
         {this.getButtonIcon()}
       </MaterialButtonStyled>
@@ -67,4 +76,4 @@ Button.defaultProps = {
   isWorking: false
 }
 
-export default Button
+export default injectIntl(Button);
